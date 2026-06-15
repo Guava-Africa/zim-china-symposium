@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import Footer from "@/components/Footer";
 
 export default function AboutPage() {
   const [scrolled, setScrolled] = useState(false);
@@ -18,22 +19,22 @@ export default function AboutPage() {
     <>
       {/* ===== NAVBAR ===== */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        scrolled ? "bg-white shadow-xl py-2 md:py-3" : "bg-black/50 backdrop-blur-sm md:bg-transparent md:backdrop-blur-none py-3 md:py-5"
+        scrolled ? "bg-white shadow-xl py-2 md:py-3" : "backdrop-blur-sm md:bg-transparent md:backdrop-blur-none py-3 md:py-5"
       }`}>
         <div className="container mx-auto px-4 md:px-8 lg:px-17">
           <div className="flex md:justify-between items-center relative">
             <Link href="/" className="flex items-center justify-center md:justify-start gap-2 md:gap-3 group mx-auto md:mx-0">
-              <img src="/Zimchina logo.png" alt="Logo" className="h-10 md:h-14 w-auto" />
+              <img src="/Zimchina.webp" alt="Logo" className="h-35 md:h-49 w-auto" />
             </Link>
-            <Link href="/reserve" className={`hidden md:inline-block bg-red-600 text-white px-3 md:px-5 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-semibold hover:bg-red-700 transition`}>
-              Reserve Seat →
+            <Link href="/register" className={`hidden md:inline-block bg-red-600 text-white px-3 md:px-5 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-semibold hover:bg-red-700 transition`}>
+              Register for the Symposium →
             </Link>
           </div>
         </div>
       </nav>
 
       {/* ===== ABOUT HERO ===== */}
-      <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 bg-gradient-to-br from-red-900 to-blue-900">
+      <section className="relative pt-42 pb-16 md:pt-40 md:pb-20 bg-gradient-to-br from-red-900 to-blue-900">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">About the Symposium</h1>
@@ -141,54 +142,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ===== FOOTER ===== */}
-      <footer className="bg-navy-900 text-gray-400 pt-12 md:pt-16 pb-6 md:pb-8">
-        <div className="container mx-auto px-4 md:px-8 lg:px-17">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
-            <div>
-              <img src="/Zimchina logo.png" height="160" width="160" className="bg-white rounded-3xl"/>
-              <p className="text-xs md:text-sm text-gray-500 leading-relaxed mt-4">Building Strategic Partnerships</p>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold text-sm md:text-base mb-3 md:mb-4">Quick Links</h4>
-              <ul className="space-y-1 md:space-y-2 text-xs md:text-sm">
-                <li><Link href="/about" className="text-gold-400 hover:text-gold-300 transition">About</Link></li>
-                <li><Link href="/panelists" className="text-gold-400 hover:text-gold-300 transition">Panelists</Link></li>
-                <li><Link href="/reserve" className="text-gold-400 hover:text-gold-300 transition">Reserve Seat</Link></li>
-                <li><a href="#schedule" className="text-gold-400 hover:text-gold-300 transition">Schedule</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold text-sm md:text-base mb-3 md:mb-4">Contact</h4>
-              <ul className="space-y-1 md:space-y-2 text-xs md:text-sm text-gray-400">
-                <li className="flex gap-2 break-all">📞 +263 242 778 899</li>
-                <li className="flex gap-2 break-all">✉️ info@zimchinasymposium.com</li>
-                <li className="flex gap-2">📍 Harare, Zimbabwe</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold text-sm md:text-base mb-3 md:mb-4">Follow Us</h4>
-              <div className="flex gap-3 md:gap-4">
-                <a href="#" className="w-8 h-8 md:w-10 md:h-10 bg-navy-800 rounded-full flex items-center justify-center text-gold-400 hover:text-gold-300 hover:bg-navy-700 transition text-sm md:text-xl">
-                  <FaFacebookF />
-                </a>
-                <a href="#" className="w-8 h-8 md:w-10 md:h-10 bg-navy-800 rounded-full flex items-center justify-center text-gold-400 hover:text-gold-300 hover:bg-navy-700 transition text-sm md:text-xl">
-                  <FaTwitter />
-                </a>
-                <a href="#" className="w-8 h-8 md:w-10 md:h-10 bg-navy-800 rounded-full flex items-center justify-center text-gold-400 hover:text-gold-300 hover:bg-navy-700 transition text-sm md:text-xl">
-                  <FaInstagram />
-                </a>
-                <a href="#" className="w-8 h-8 md:w-10 md:h-10 bg-navy-800 rounded-full flex items-center justify-center text-gold-400 hover:text-gold-300 hover:bg-navy-700 transition text-sm md:text-xl">
-                  <FaLinkedinIn />
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-blue-900/50 pt-5 md:pt-6 text-center text-[10px] md:text-xs text-gray-500">
-            <div>© {currentYear} Zimbabwe-China Investment Symposium. All rights reserved.</div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

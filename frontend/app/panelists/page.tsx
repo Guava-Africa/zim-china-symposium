@@ -31,7 +31,7 @@ export default function PanelistsPage() {
     {
       name: "Dr. John Mushayavanhu",
       title: "Governor",
-      organization: "Reserve Bank of Zimbabwe",
+      organization: "register Bank of Zimbabwe",
       topic: "Monetary Policy & Investment Climate",
       achievements: "Former CBZ Holdings CEO, Banking veteran",
     },
@@ -76,22 +76,22 @@ export default function PanelistsPage() {
     <>
       {/* ===== NAVBAR ===== */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        scrolled ? "bg-white shadow-xl py-2 md:py-3" : "bg-black/50 backdrop-blur-sm md:bg-transparent md:backdrop-blur-none py-3 md:py-5"
+        scrolled ? "bg-white shadow-xl py-2 md:py-3" : "backdrop-blur-sm md:bg-transparent md:backdrop-blur-none py-3 md:py-5"
       }`}>
         <div className="container mx-auto px-4 md:px-8 lg:px-17">
           <div className="flex md:justify-between items-center relative">
             <Link href="/" className="flex items-center justify-center md:justify-start gap-2 md:gap-3 group mx-auto md:mx-0">
-              <img src="/Zimchina logo.png" alt="Logo" className="h-10 md:h-14 w-auto" />
+              <img src="/Zimchina.webp" alt="Logo" className="h-35 md:h-49 w-auto" />
             </Link>
-            <Link href="/reserve" className={`hidden md:inline-block bg-red-600 text-white px-3 md:px-5 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-semibold hover:bg-red-700 transition`}>
-              Reserve Seat →
+            <Link href="/register" className={`hidden md:inline-block bg-red-600 text-white px-3 md:px-5 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-semibold hover:bg-red-700 transition`}>
+              Register for the Symposium →
             </Link>
           </div>
         </div>
       </nav>
 
       {/* ===== PANELISTS HERO ===== */}
-      <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 bg-gradient-to-br from-red-900 to-yellow-700">
+      <section className="relative pt-42 pb-16 md:pt-40 md:pb-20 bg-gradient-to-br from-red-900 to-yellow-700">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Meet Our Panelists</h1>
@@ -150,8 +150,8 @@ export default function PanelistsPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Join These Distinguished Leaders</h2>
           <p className="text-blue-200 mb-6">Secure your seat at the premier investment symposium</p>
-          <Link href="/reserve" className="inline-block bg-red-600 text-white px-8 py-3 rounded-full font-bold hover:bg-red-700 transition">
-            Reserve Your Seat →
+          <Link href="/register" className="inline-block bg-red-600 text-white px-8 py-3 rounded-full font-bold hover:bg-red-700 transition">
+            Register for the Symposium →
           </Link>
         </div>
       </section>

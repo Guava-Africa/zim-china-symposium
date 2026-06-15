@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="container mx-auto px-4 md:px-8 lg:px-17">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
             <div>
-              <img src="/Zimchina logo.png" height="160" width="160" className="bg-white rounded-3xl"/>
+              <img src="/Zimchina logo.png" height="260" width="260" className="bg-white rounded-3xl"/>
               <p className="text-xs md:text-sm text-gray-500 leading-relaxed mt-4">Building Strategic Partnerships</p>
             </div>
             <div>
@@ -18,8 +18,8 @@ export default function Footer() {
               <ul className="space-y-1 md:space-y-2 text-xs md:text-sm">
                 <li><Link href="/about" className="text-gold-400 hover:text-gold-300 transition">About</Link></li>
                 <li><Link href="/panelists" className="text-gold-400 hover:text-gold-300 transition">Panelists</Link></li>
-                <li><Link href="/reserve" className="text-gold-400 hover:text-gold-300 transition">Reserve Seat</Link></li>
-                <li><a href="#schedule" className="text-gold-400 hover:text-gold-300 transition">Schedule</a></li>
+                <li><Link href="/register" className="text-gold-400 hover:text-gold-300 transition">Register for the Symposium</Link></li>
+                <li><a href="/#schedule" className="text-gold-400 hover:text-gold-300 transition">Schedule</a></li>
               </ul>
             </div>
             <div>

@@ -156,9 +156,10 @@ app.post('/api/register', limiter, upload.single('profileImage'), async (req, re
         });
         
         await resend.emails.send({
-          from: 'Zimbabwe-China Symposium <noreply@zimchinasymposium.com>',
+          // from: 'Zimbabwe-China Symposium <noreply@zimchinasymposium.com>',
+          from: 'Zimbabwe-China Symposium <admin@toitsolutions.co.zw>',
           to: [email],
-          subject: nationality === 'Chinese' ? '注册确认' : 'Registration Confirmed',
+          subject: 'Registration Confirmed for Zimbabwe-China Investment Symposium 2026',
           html: emailHtml
         });
         console.log('✅ Email sent to:', email);

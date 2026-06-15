@@ -31,24 +31,24 @@ export default function Home() {
             <div className='flex items-center gap-9 p-8 mx-auto md:mx-0'>
               <Link href="/" className="flex items-center justify-center md:justify-start group mx-auto md:mx-0 transition-all duration-500">
               <img 
-                src={'/Zimchina.png'} 
+                src={'/Zimchina.webp'} 
                 alt="Zimbabwe-China Symposium Logo"
                 className={`transition-all duration-500 object-contain ${
                   scrolled 
                     ? "h-32 md:h-34 w-auto" 
-                    : "h-38 md:h-52 lg:h-50 w-auto ml-30"
+                    : "h-41 md:h-52 lg:h-55 w-auto ml-0 md:ml-30"
                 }`}
               />
             </Link>
 
             <Link href="/" className="flex items-center justify-center md:justify-start group mx-auto md:mx-0 transition-all duration-500">
               <img 
-                src={'/chamberlogo.png'} 
+                src={'/chamberlogo.webp'} 
                 alt="Zimbabwe-China Symposium Logo"
                 className={`transition-all duration-500 object-contain ${
                   scrolled 
                     ? "h-32 md:h-34 w-auto" 
-                    : "h-38 md:h-52 lg:h-50 w-auto"
+                    : "h-41 md:h-52 lg:h-55 w-auto"
                 }`}
               />
             </Link>
@@ -56,7 +56,7 @@ export default function Home() {
 
             {/* CTA Button - Hidden on mobile, visible on desktop */}
             <Link 
-              href="/reserve" 
+              href="/register" 
               className={`hidden md:inline-block transition-all duration-300 ${
                 scrolled 
                   ? "bg-red-600 hover:bg-red-800 text-white px-4 py-2 text-sm"
@@ -74,7 +74,7 @@ export default function Home() {
         {/* Video Background */}
         <div className="absolute top-0 left-0 w-full h-full">
           <video 
-            src="video.mp4" 
+            src="video.webm" 
             autoPlay 
             loop 
             muted 
@@ -88,7 +88,7 @@ export default function Home() {
         
         {/* Hero Content - Extra padding to accommodate large logo */}
         <div className="relative z-10 text-left px-4 md:px-8 lg:px-12 max-w-6xl mx-auto w-full pt-32 md:pt-50 lg:pt-65 pb-16">
-          <p className="text-md md:text-base lg:text-lg text-gray-300 mb-3 md:mb-4">
+          <p className="text-lg lg:text-2xl text-gray-300 mb-3 md:mb-4">
             Brought to you by <a href="https://www.africapaciti.com" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:underline">Africapaciti</a> & The Chamber of Chinese Enterprises in Zimbabwe
           </p>
           
@@ -114,7 +114,7 @@ export default function Home() {
           {/* Buttons */}
           <div className="flex flex-wrap gap-3 md:gap-4">
             <Link 
-              href="/reserve" 
+              href="/register" 
               className="bg-red-600 text-white px-5 md:px-7 py-2 md:py-2.5 rounded-full text-sm md:text-base font-bold hover:bg-red-900 hover:scale-105 transition-all duration-300 shadow-2xl"
             >
               Register
@@ -126,13 +126,13 @@ export default function Home() {
               Schedule
             </Link> */}
             <Link 
-              href="/reserve" 
+              href="/panelists" 
               className="border-2 border-red-700 text-white px-5 md:px-7 py-2 md:py-2.5 rounded-full text-sm md:text-base font-bold hover:bg-red-700 hover:scale-105 transition-all duration-300 shadow-2xl"
             >
               Panelists
             </Link>
             <Link 
-              href="/reserve" 
+              href="/about" 
               className="border-2 border-red-700 text-white px-5 md:px-7 py-2 md:py-2.5 rounded-full text-sm md:text-base font-bold hover:bg-red-700 hover:scale-105 transition-all duration-300 shadow-2xl"
             >
               About
@@ -237,7 +237,7 @@ export default function Home() {
           
           <div className="text-center mt-8 md:mt-10">
             <Link 
-              href="/reserve" 
+              href="/register" 
               className="inline-block bg-red-600 text-white px-6 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-base font-semibold hover:bg-red-700 hover:scale-105 transition-all duration-300 shadow-lg"
             >
               Register →
