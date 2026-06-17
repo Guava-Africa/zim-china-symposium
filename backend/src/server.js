@@ -7,7 +7,8 @@ const path = require('path');
 const fs = require('fs');
 const { PrismaClient } = require('@prisma/client');
 const { Resend } = require('resend');
-const { getConfirmationEmail, getAdminNotificationHtml } = require('./email/confirmationEmail');
+const { getConfirmationEmail } = require('./email/confirmationEmail');
+const createWordDocumentWithImages  = require('./utils/wordGenerator');
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ const prisma = new PrismaClient();
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const PORT = process.env.PORT || 5000;
+const MAX_REGISTRATIONS = 200;
 
 // Create uploads directory if it doesn't exist
 const uploadsDir = path.join(__dirname, '../uploads');
@@ -24,14 +26,13 @@ if (!fs.existsSync(uploadsDir)) {
   console.log('📁 Created uploads directory:', uploadsDir);
 }
 
-// Configure multer for disk storage (saves files to disk)
+// Configure multer for disk storage
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, uploadsDir);
   },
   filename: function (req, file, cb) {
-    // Sanitize the full name to create a safe filename
-    const { fullName, title } = req.body;
+    const { fullName } = req.body;
     const safeName = (fullName || 'user')
       .toLowerCase()
       .replace(/[^a-z0-9]/g, '_')
@@ -45,7 +46,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ 
   storage: storage,
-  limits: { fileSize: 5 * 1024 * 1024 }, // 5MB limit
+  limits: { fileSize: 5 * 1024 * 1024 },
   fileFilter: (req, file, cb) => {
     if (file.mimetype.startsWith('image/')) {
       cb(null, true);
@@ -55,7 +56,7 @@ const upload = multer({
   }
 });
 
-// Serve static files from uploads folder (so images can be viewed via URL)
+// Serve static files
 app.use('/uploads', express.static(uploadsDir));
 
 // Middleware
@@ -75,7 +76,28 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'API is running', timestamp: new Date().toISOString() });
 });
 
-// Registration endpoint
+// ===== COUNT REGISTRATIONS =====
+app.get('/api/registrations/count', async (req, res) => {
+  try {
+    const count = await prisma.registration.count();
+    const remaining = Math.max(0, MAX_REGISTRATIONS - count);
+    
+    res.json({
+      success: true,
+      data: {
+        total: count,
+        max: MAX_REGISTRATIONS,
+        remaining: remaining,
+        isFull: remaining === 0
+      }
+    });
+  } catch (error) {
+    console.error('Error counting registrations:', error);
+    res.status(500).json({ success: false, error: 'Server error' });
+  }
+});
+
+// ===== REGISTRATION ENDPOINT =====
 app.post('/api/register', limiter, upload.single('profileImage'), async (req, res) => {
   try {
     console.log('📝 Registration request received');
@@ -138,17 +160,15 @@ app.post('/api/register', limiter, upload.single('profileImage'), async (req, re
         nationalId,
         organization,
         profilePhoto: profilePhotoPath,
-        status: 'pending'
       }
     });
-
-    console.log('✅ Registration saved, ID:', registration.id);
 
     // Send confirmation email
     if (process.env.RESEND_API_KEY) {
       try {
         const emailHtml = getConfirmationEmail({
           id: registration.id,
+          regNumber: registration.regNumber,
           title,
           fullName,
           organization,
@@ -156,7 +176,6 @@ app.post('/api/register', limiter, upload.single('profileImage'), async (req, re
         });
         
         await resend.emails.send({
-          // from: 'Zimbabwe-China Symposium <noreply@zimchinasymposium.com>',
           from: 'Zimbabwe-China Symposium <admin@toitsolutions.co.zw>',
           to: [email],
           subject: 'Registration Confirmed for Zimbabwe-China Investment Symposium 2026',
@@ -172,16 +191,14 @@ app.post('/api/register', limiter, upload.single('profileImage'), async (req, re
       success: true, 
       message: 'Registration successful! Check your email.',
       data: { 
-        id: registration.id, 
+        regNumber: registration.regNumber,
         email: registration.email,
-        photoUrl: profilePhotoPath 
       }
     });
 
   } catch (error) {
     console.error('❌ Registration error:', error);
     
-    // Delete uploaded file if there was an error
     if (req.file) {
       const filePath = path.join(uploadsDir, req.file.filename);
       if (fs.existsSync(filePath)) {
@@ -201,59 +218,40 @@ app.post('/api/register', limiter, upload.single('profileImage'), async (req, re
   }
 });
 
-// Get registration with photo URL
-app.get('/api/registration/:email', async (req, res) => {
-  try {
-    const { email } = req.params;
-    const registration = await prisma.registration.findUnique({
-      where: { email },
-      select: { 
-        id: true, 
-        status: true, 
-        createdAt: true, 
-        fullName: true, 
-        title: true,
-        profilePhoto: true
-      }
-    });
-    
-    if (!registration) {
-      return res.status(404).json({ success: false, error: 'Not found' });
-    }
-    
-    // Construct full URL for photo
-    const baseUrl = `${req.protocol}://${req.get('host')}`;
-    const photoUrl = registration.profilePhoto ? `${baseUrl}${registration.profilePhoto}` : null;
-    
-    res.json({ 
-      success: true, 
-      data: {
-        ...registration,
-        photoUrl
-      }
-    });
-  } catch (error) {
-    res.status(500).json({ success: false, error: 'Server error' });
-  }
-});
-
-// Get all registrations with photo URLs
+// ===== GET ALL REGISTRATIONS (with optional field filtering) =====
 app.get('/api/registrations', async (req, res) => {
   try {
+    // Get fields parameter - e.g., ?fields=regNumber,fullName,email,organization
+    const fieldsParam = req.query.fields;
+    let selectFields = {};
+    
+    if (fieldsParam) {
+      const fields = fieldsParam.split(',').map(f => f.trim());
+      const validFields = ['id', 'regNumber', 'title', 'fullName', 'email', 'phone', 'nationality', 'nationalId', 'organization', 'profilePhoto', 'createdAt'];
+      
+      fields.forEach(field => {
+        if (validFields.includes(field)) {
+          selectFields[field] = true;
+        }
+      });
+    } else {
+      // Default fields if none specified
+      selectFields = {
+        id: true,
+        regNumber: true,
+        title: true,
+        fullName: true,
+        email: true,
+        phone: true,
+        nationality: true,
+        organization: true,
+        createdAt: true
+      };
+    }
+
     const registrations = await prisma.registration.findMany({
-      orderBy: { createdAt: 'desc' },
-      select: { 
-        id: true, 
-        title: true, 
-        fullName: true, 
-        email: true, 
-        phone: true, 
-        nationality: true, 
-        organization: true, 
-        status: true, 
-        createdAt: true,
-        profilePhoto: true
-      }
+      orderBy: { regNumber: 'asc' },
+      select: selectFields
     });
     
     const baseUrl = `${req.protocol}://${req.get('host')}`;
@@ -262,44 +260,113 @@ app.get('/api/registrations', async (req, res) => {
       photoUrl: reg.profilePhoto ? `${baseUrl}${reg.profilePhoto}` : null
     }));
     
-    res.json({ success: true, data: registrationsWithUrls });
+    res.json({ 
+      success: true, 
+      count: registrationsWithUrls.length,
+      data: registrationsWithUrls 
+    });
   } catch (error) {
+    console.error('Error fetching registrations:', error);
     res.status(500).json({ success: false, error: 'Server error' });
   }
 });
 
-// Get a specific photo file
-app.get('/api/photo/:filename', (req, res) => {
-  const { filename } = req.params;
-  const filePath = path.join(uploadsDir, filename);
-  
-  if (fs.existsSync(filePath)) {
-    res.sendFile(filePath);
-  } else {
-    res.status(404).json({ error: 'Photo not found' });
-  }
-});
-
-// Update registration status
-app.patch('/api/registration/:id/status', async (req, res) => {
+// ===== EXPORT WORD DOCUMENT =====
+app.get('/api/export/word/all/regist', async (req, res) => {
   try {
-    const { id } = req.params;
-    const { status } = req.body;
+    // Get fields parameter - e.g., ?fields=regNumber,fullName,email,organization,nationality,phone,title
+    const fieldsParam = req.query.fields || 'regNumber,title,fullName,email,phone,organization,nationality';
+    const fields = fieldsParam.split(',').map(f => f.trim());
     
-    if (!['pending', 'confirmed', 'cancelled'].includes(status)) {
-      return res.status(400).json({ success: false, error: 'Invalid status' });
-    }
+    // Get limit parameter (optional)
+    const limit = req.query.limit ? parseInt(req.query.limit) : null;
     
-    const updated = await prisma.registration.update({
-      where: { id },
-      data: { status }
+    // Build select object
+    const validFields = ['id', 'regNumber', 'title', 'fullName', 'email', 'phone', 'nationality', 'nationalId', 'organization', 'profilePhoto', 'createdAt'];
+    const selectFields = {};
+    fields.forEach(field => {
+      if (validFields.includes(field)) {
+        selectFields[field] = true;
+      }
     });
     
-    res.json({ success: true, data: updated });
+    // Always include profilePhoto for images
+    selectFields.profilePhoto = true;
+    
+    // Default to all fields if none valid
+    if (Object.keys(selectFields).length === 0) {
+      selectFields = {
+        id: true,
+        regNumber: true,
+        title: true,
+        fullName: true,
+        email: true,
+        phone: true,
+        organization: true,
+        nationality: true,
+        profilePhoto: true,
+        createdAt: true
+      };
+    }
+
+    // Fetch registrations
+    const registrations = await prisma.registration.findMany({
+      orderBy: { regNumber: 'asc' },
+      take: limit || undefined,
+      select: selectFields
+    });
+
+    if (registrations.length === 0) {
+      return res.status(404).json({ success: false, error: 'No registrations found' });
+    }
+
+    // Build full URLs for photos and fetch images
+    const baseUrl = `${req.protocol}://${req.get('host')}`;
+    const registrationsWithImages = await Promise.all(registrations.map(async (reg) => {
+      let imageBuffer = null;
+      
+      // Fetch the image if profilePhoto exists
+      if (reg.profilePhoto) {
+        try {
+          const imagePath = path.join(__dirname, '..', reg.profilePhoto);
+          if (fs.existsSync(imagePath)) {
+            imageBuffer = fs.readFileSync(imagePath);
+            console.log(`📸 Loaded image for ${reg.fullName}: ${reg.profilePhoto}`);
+          } else {
+            console.log(`⚠️ Image not found for ${reg.fullName}: ${reg.profilePhoto}`);
+          }
+        } catch (imgError) {
+          console.error(`❌ Error loading image for ${reg.fullName}:`, imgError.message);
+        }
+      }
+      
+      return {
+        ...reg,
+        imageBuffer: imageBuffer,
+        imageExists: !!imageBuffer
+      };
+    }));
+
+    // Generate Word document with images
+    const docBuffer = await createWordDocumentWithImages({
+      registrations: registrationsWithImages,
+      fields: Object.keys(selectFields).filter(f => f !== 'profilePhoto'),
+      title: 'Zimbabwe-China Investment Symposium - Registrations',
+      eventDate: '2 July 2026',
+      venue: 'Golden Conifer Conference Centre, Harare'
+    });
+
+    // Send the document
+    res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+    res.setHeader('Content-Disposition', `attachment; filename=registrations_${new Date().toISOString().split('T')[0]}.docx`);
+    res.send(docBuffer);
+
   } catch (error) {
-    res.status(500).json({ success: false, error: 'Server error' });
+    console.error('Error exporting Word document:', error);
+    res.status(500).json({ success: false, error: 'Error generating document: ' + error.message });
   }
 });
+
 
 // Start server
 app.listen(PORT, () => {
@@ -312,6 +379,7 @@ app.listen(PORT, () => {
 ║  📧 Email: ${process.env.RESEND_API_KEY ? '✅ Ready' : '❌ Not configured'}
 ║  🗄️  Database: ✅ MySQL Connected
 ║  📁 Uploads: ${uploadsDir}
+║  📊 Max Registrations: ${MAX_REGISTRATIONS}
 ╚══════════════════════════════════════════════════════════╝
   `);
 });

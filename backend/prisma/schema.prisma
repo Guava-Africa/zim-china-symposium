@@ -9,6 +9,7 @@ datasource db {
 
 model Registration {
   id           String   @id @default(cuid())
+  regNumber    Int      @default(autoincrement()) @map("reg_number") @unique
   title        String
   fullName     String
   email        String   @unique
@@ -17,7 +18,6 @@ model Registration {
   nationalId   String
   organization String
   profilePhoto String?  @map("profile_photo") @db.LongText
-  status       String   @default("pending") // pending, confirmed, cancelled
   createdAt    DateTime @default(now()) @map("created_at")
   updatedAt    DateTime @updatedAt @map("updated_at")
 
