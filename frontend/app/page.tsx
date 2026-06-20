@@ -17,61 +17,77 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Schedule summary data
+  const scheduleSummary = [
+    { time: "08:00 – 09:00", title: "Delegates Arrival & Registration", type: "registration" },
+    { time: "09:00 – 11:10", title: "Session 1: Opening Ceremony", type: "session" },
+    { time: "11:10 – 11:35", title: "Tea Break", type: "break" },
+    { time: "11:35 – 12:10", title: "Session 2: Investment Environment Plenary", type: "session" },
+    { time: "12:10 – 12:55", title: "Session 3: Zero Tariffs Trade Policy", type: "session" },
+    { time: "12:55 – 13:00", title: "Signing Ceremony", type: "special" },
+    { time: "13:00 – 14:00", title: "Lunch", type: "break" },
+    { time: "14:00 – 14:20", title: "Session 5: Mining Strategy Address", type: "session" },
+    { time: "14:20 – 15:00", title: "Session 6: Mining Investment Plenary", type: "session" },
+    { time: "15:00 – 15:20", title: "Session 7: Tourism Strategy Address", type: "session" },
+    { time: "15:20 – 15:45", title: "Session 8: Tourism Plenary", type: "session" },
+    { time: "15:45 – 16:00", title: "Session 9: Land Management Address", type: "session" },
+    { time: "16:00 – 16:30", title: "Session 10: Land & Rural Development Plenary", type: "session" },
+    { time: "16:30 – 16:45", title: "Session 11: Immigration Policy", type: "session" },
+    { time: "16:45 – 17:10", title: "Session 12: Resolutions & Closing", type: "session" },
+    { time: "17:10 – 19:00", title: "Networking Cocktail", type: "special" },
+    { time: "19:00", title: "Delegates Departure", type: "end" },
+  ];
+
   return (
     <>
-      {/* ===== NAVBAR WITH SCALING LOGO ===== */}
+      {/* ===== NAVBAR ===== */}
       <nav 
-        className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-          scrolled ? "bg-white shadow-xl" : " md:bg-transparent md:backdrop-blur-none "
-        }`}
+  className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+    scrolled ? "bg-white shadow-xl " : "bg-black/30 backdrop-blur-sm md:bg-transparent md:backdrop-blur-none"
+  }`}
+>
+  <div className="container mx-auto px-4 md:px-8 lg:px-12">
+    <div className="flex md:justify-between items-center relative">
+      <div className='flex items-center gap-9 p-8 mx-auto md:mx-0'>
+        <Link href="/" className="flex items-center justify-center md:justify-start group mx-auto md:mx-0 transition-all duration-500">
+          <img 
+            src={'/Zimchina.webp'} 
+            alt="Zimbabwe-China Symposium Logo"
+            className={`transition-all duration-500 object-contain ${
+              scrolled 
+                ? "h-32 md:h-34 w-auto" 
+                : "h-41 md:h-52 lg:h-55 w-auto ml-0 md:ml-30"
+            }`}
+          />
+        </Link>
+        <Link href="/" className="flex items-center justify-center md:justify-start group mx-auto md:mx-0 transition-all duration-500">
+          <img 
+            src={'/chamberlogo.webp'} 
+            alt="Zimbabwe-China Symposium Logo"
+            className={`transition-all duration-500 object-contain ${
+              scrolled 
+                ? "h-32 md:h-34 w-auto" 
+                : "h-41 md:h-52 lg:h-55 w-auto"
+            }`}
+          />
+        </Link>
+      </div>
+      <Link 
+        href="/register" 
+        className={`hidden md:inline-block transition-all duration-300 ${
+          scrolled 
+            ? "bg-red-600 hover:bg-red-800 text-white px-4 py-2 text-sm"
+            : "bg-red-600 hover:bg-red-800 text-white px-5 py-2 text-base"
+        } rounded-full font-semibold hover:shadow-lg hover:scale-105`}
       >
-        <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <div className="flex md:justify-between items-center relative">
-            {/* Logo - Large when not scrolled, smaller when scrolled */}
-            <div className='flex items-center gap-9 p-8 mx-auto md:mx-0'>
-              <Link href="/" className="flex items-center justify-center md:justify-start group mx-auto md:mx-0 transition-all duration-500">
-              <img 
-                src={'/Zimchina.webp'} 
-                alt="Zimbabwe-China Symposium Logo"
-                className={`transition-all duration-500 object-contain ${
-                  scrolled 
-                    ? "h-32 md:h-34 w-auto" 
-                    : "h-41 md:h-52 lg:h-55 w-auto ml-0 md:ml-30"
-                }`}
-              />
-            </Link>
-
-            <Link href="/" className="flex items-center justify-center md:justify-start group mx-auto md:mx-0 transition-all duration-500">
-              <img 
-                src={'/chamberlogo.webp'} 
-                alt="Zimbabwe-China Symposium Logo"
-                className={`transition-all duration-500 object-contain ${
-                  scrolled 
-                    ? "h-32 md:h-34 w-auto" 
-                    : "h-41 md:h-52 lg:h-55 w-auto"
-                }`}
-              />
-            </Link>
-              </div>
-
-            {/* CTA Button - Hidden on mobile, visible on desktop */}
-            <Link 
-              href="/register" 
-              className={`hidden md:inline-block transition-all duration-300 ${
-                scrolled 
-                  ? "bg-red-600 hover:bg-red-800 text-white px-4 py-2 text-sm"
-                  : "bg-red-600 hover:bg-red-800 text-white px-5 py-2 text-base"
-              } rounded-full font-semibold hover:shadow-lg hover:scale-105`}
-            >
-              Register for the Symposium →
-            </Link>
-          </div>
-        </div>
-      </nav>
+        Register for the Symposium →
+      </Link>
+    </div>
+  </div>
+</nav>
 
       {/* ===== HERO SECTION ===== */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Video Background */}
         <div className="absolute top-0 left-0 w-full h-full">
           <video 
             src="video.webm" 
@@ -83,11 +99,9 @@ export default function Home() {
           />
         </div>
         
-        {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/70"></div>
         
-        {/* Hero Content - Extra padding to accommodate large logo */}
-        <div className="relative z-10 text-left px-4 md:px-8 lg:px-12 max-w-6xl mx-auto w-full pt-32 md:pt-50 lg:pt-65 pb-16">
+        <div className="relative z-10 text-left px-4 md:px-8 lg:px-12 max-w-6xl mx-auto w-full pt-42 md:pt-60 lg:pt-73 pb-16">
           <p className="text-lg lg:text-2xl text-gray-300 mb-3 md:mb-4">
             Brought to you by <a href="https://www.africapaciti.com" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:underline">Africapaciti</a> & The Chamber of Chinese Enterprises in Zimbabwe
           </p>
@@ -104,47 +118,45 @@ export default function Home() {
               Building Strategic Partnerships
             </p>
             <p className="text-base sm:text-lg md:text-xl text-gray-200">
-              Harare, Zimbabwe • 25 June 2026
+              Harare, Zimbabwe • 2 July 2026
             </p>
             <p className="text-base sm:text-lg md:text-xl text-gray-200">
               Golden Conifer Conference Centre
             </p>
           </div>
           
-          {/* Buttons */}
           <div className="flex flex-wrap gap-3 md:gap-4">
             <Link 
               href="/register" 
-              className="bg-red-600 text-white px-5 md:px-7 py-2 md:py-2.5 rounded-full text-sm md:text-base font-bold hover:bg-red-900 hover:scale-105 transition-all duration-300 shadow-2xl"
+              className="bg-red-600 text-white px-5 md:px-7 py-3 md:py-2.5 rounded-full text-sm md:text-base font-bold hover:bg-red-900 hover:scale-105 transition-all duration-300 shadow-2xl"
             >
               Register
             </Link>
-            {/* <Link 
-              href="#schedule" 
-              className="bg-transparent border-2 border-white text-white px-5 md:px-7 py-2 md:py-2.5 rounded-full text-sm md:text-base font-bold hover:bg-white/10 hover:border-white/80 transition-all duration-300"
+            <Link 
+              href="/schedule" 
+              className="bg-transparent border-2 border-white text-white px-5 md:px-7 py-3 md:py-2.5 rounded-full text-sm md:text-base font-bold hover:bg-white/10 hover:border-white/80 transition-all duration-300"
             >
               Schedule
-            </Link> */}
+            </Link>
             <Link 
               href="/panelists" 
-              className="border-2 border-red-700 text-white px-5 md:px-7 py-2 md:py-2.5 rounded-full text-sm md:text-base font-bold hover:bg-red-700 hover:scale-105 transition-all duration-300 shadow-2xl"
+              className="border-2 border-red-700 text-white px-5 md:px-7 py-3 md:py-2.5 rounded-full text-sm md:text-base font-bold hover:bg-red-700 hover:scale-105 transition-all duration-300 shadow-2xl"
             >
               Panelists
             </Link>
             <Link 
               href="/about" 
-              className="border-2 border-red-700 text-white px-5 md:px-7 py-2 md:py-2.5 rounded-full text-sm md:text-base font-bold hover:bg-red-700 hover:scale-105 transition-all duration-300 shadow-2xl"
+              className="border-2 border-red-700 text-white px-5 md:px-7 py-3 md:py-2.5 rounded-full text-sm md:text-base font-bold hover:bg-red-700 hover:scale-105 transition-all duration-300 shadow-2xl"
             >
               About
             </Link>
           </div>
         </div>
         
-        {/* Scroll Indicator */}
         <div className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce cursor-pointer" onClick={() => {
-          const venueSection = document.getElementById('venue');
-          if (venueSection) {
-            venueSection.scrollIntoView({ behavior: 'smooth' });
+          const scheduleSection = document.getElementById('schedule');
+          if (scheduleSection) {
+            scheduleSection.scrollIntoView({ behavior: 'smooth' });
           }
         }}>
           <div className="flex flex-col items-center gap-1">
@@ -159,7 +171,7 @@ export default function Home() {
       {/* ===== VENUE SECTION ===== */}
       <section id="venue" className="py-12 md:py-16 lg:py-20 bg-white">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start mb-10">
             <div className="w-full lg:w-1/2">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-2 md:mb-3">Venue</h2>
               <div className="w-16 h-1 bg-gold-500 mb-4 md:mb-5"></div>
@@ -188,51 +200,141 @@ export default function Home() {
               ></iframe>
             </div>
           </div>
+
+          {/* Venue Images */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-6">
+            <div className="relative h-48 md:h-56 lg:h-64 rounded-xl overflow-hidden shadow-lg bg-gray-200 flex items-center justify-center group">
+              <img 
+                src="/1.jpeg" 
+                alt="Golden Conifer Conference Centre - Main Hall"
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  const parent = e.currentTarget.parentElement;
+                  if (parent) {
+                    parent.innerHTML = `
+                      <div class="flex flex-col items-center justify-center text-gray-400">
+                        <span class="text-4xl mb-2">🏛️</span>
+                        <span class="text-sm font-medium">Main Hall</span>
+                        <span class="text-xs">Venue Photo 1</span>
+                      </div>
+                    `;
+                  }
+                }}
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+            </div>
+
+            <div className="relative h-48 md:h-56 lg:h-64 rounded-xl overflow-hidden shadow-lg bg-gray-200 flex items-center justify-center group">
+              <img 
+                src="/2.jpeg" 
+                alt="Golden Conifer Conference Centre - Conference Room"
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  const parent = e.currentTarget.parentElement;
+                  if (parent) {
+                    parent.innerHTML = `
+                      <div class="flex flex-col items-center justify-center text-gray-400">
+                        <span class="text-4xl mb-2">🪑</span>
+                        <span class="text-sm font-medium">Conference Room</span>
+                        <span class="text-xs">Venue Photo 2</span>
+                      </div>
+                    `;
+                  }
+                }}
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+            </div>
+
+            <div className="relative h-48 md:h-56 lg:h-64 rounded-xl overflow-hidden shadow-lg bg-gray-200 flex items-center justify-center group">
+              <img 
+                src="/3.jpeg" 
+                alt="Golden Conifer Conference Centre - Outdoor Area"
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  const parent = e.currentTarget.parentElement;
+                  if (parent) {
+                    parent.innerHTML = `
+                      <div class="flex flex-col items-center justify-center text-gray-400">
+                        <span class="text-4xl mb-2">🌳</span>
+                        <span class="text-sm font-medium">Outdoor Area</span>
+                        <span class="text-xs">Venue Photo 3</span>
+                      </div>
+                    `;
+                  }
+                }}
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ===== SCHEDULE SECTION ===== */}
+      {/* ===== SCHEDULE SUMMARY SECTION ===== */}
       <section id="schedule" className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-navy-900 to-blue-900">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-8 md:mb-10">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">Event Schedule Summary</h2>
             <div className="w-16 h-1 bg-gold-500 mx-auto"></div>
-            <p className="text-blue-200 mt-3 text-xs md:text-sm">25 June 2026 • Harare, Zimbabwe</p>
+            <p className="text-blue-200 mt-3 text-xs md:text-sm">2 July 2026 • Harare, Zimbabwe</p>
+            <Link href="/schedule" className="inline-block mt-4 text-gold-400 hover:text-gold-300 transition text-sm font-medium underline">
+              View Full Detailed Schedule →
+            </Link>
           </div>
           
           <div className="max-w-4xl mx-auto">
-            {[
-              { time: "08:00 - 09:00", title: "Delegates Arrival & Registration", type: "special" },
-              { time: "09:00 - 09:10", title: "Briefing Guest of Honour", type: "special" },
-              { time: "09:10 - 10:30", title: "Session 1: Opening Ceremony", subtitle: "Opening Prayer & National Anthem", type: "normal" },
-              { time: "10:30 - 11:00", title: "Tea Break", type: "special" },
-              { time: "11:00 - 11:30", title: "Session 2: Creating an Attractive Investment Environment for Chinese Investors in Zimbabwe", speaker: "Moderator: Mr. Andy Hodges", type: "normal" },
-              { time: "11:30 - 11:50", title: "Session 3: Chinese Embassy Remarks", speaker: "Minister of Industry", type: "normal" },
-              { time: "12:15 - 13:00", title: "Session 4: Corporate Citizenship, Inclusivity, Social Integration", speaker: "Moderator: Mr. Chris Mugaga", type: "normal" },
-              { time: "13:00 - 14:00", title: "Lunch", type: "special" },
-              { time: "14:30 - 15:00", title: "Session 6: Unlocking Mining Investment Opportunities in Zimbabwe", type: "normal" },
-              { time: "15:00 - 15:30", title: "Session 7: Remarks by Hon. Minister of Lands", type: "normal" },
-              { time: "15:30 - 16:00", title: "Session 8: Enhanced Land Management", speaker: "Moderator: Dr. Ayo Odesula", type: "normal" },
-              { time: "16:00 - 16:15", title: "Session 9: Resolutions and Way Forward", type: "normal" },
-              { time: "16:15 - 16:25", title: "Closing Remarks", type: "special" },
-              { time: "16:25 - 18:00", title: "Network Cocktail & Entertainment", type: "special" },
-              { time: "18:00", title: "Delegates Departure", type: "special" },
-            ].map((item, idx) => (
-              <div key={idx} className={`p-3 md:p-4 rounded-lg mb-2 transition ${
-                item.type === "special" 
-                  ? "bg-gold-500/10 border-l-4 border-gold-500" 
-                  : "bg-white/5 hover:bg-white/10"
-              }`}>
-                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                  <div className="text-gold-400 font-bold text-xs md:text-sm sm:w-28 flex-shrink-0">{item.time}</div>
-                  <div className="flex-1 min-w-0">
-                    <div className="text-white font-semibold text-sm md:text-base break-words">{item.title}</div>
-                    {item.subtitle && <div className="text-gray-300 text-xs md:text-sm break-words">{item.subtitle}</div>}
-                    {item.speaker && <div className="text-gold-400 text-xs mt-1 break-words">{item.speaker}</div>}
+            {scheduleSummary.map((item, idx) => {
+              let bgClass = "bg-white/5 hover:bg-white/10";
+              let borderClass = "";
+              
+              if (item.type === "registration") {
+                bgClass = "bg-gold-500/10 border-l-4 border-gold-500";
+              } else if (item.type === "break") {
+                bgClass = "bg-gray-500/10 border-l-4 border-gray-400";
+              } else if (item.type === "special") {
+                bgClass = "bg-green-500/10 border-l-4 border-green-500";
+              } else if (item.type === "end") {
+                bgClass = "bg-red-500/10 border-l-4 border-red-500";
+              }
+              
+              return (
+                <div key={idx} className={`p-3 md:p-4 rounded-lg mb-2 transition ${bgClass}`}>
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <div className="text-gold-400 font-bold text-xs md:text-sm sm:w-28 flex-shrink-0">
+                      {item.time}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-white font-semibold text-sm md:text-base break-words">
+                        {item.title}
+                      </div>
+                      {item.type === "session" && (
+                        <div className="text-xs text-blue-300 mt-0.5">Panel Discussion • Featured Speakers</div>
+                      )}
+                      {item.type === "registration" && (
+                        <div className="text-xs text-gold-300 mt-0.5">Check-in & Welcome Coffee</div>
+                      )}
+                    </div>
+                    {item.type === "session" && (
+                      <span className="text-[10px] bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded-full whitespace-nowrap">Session</span>
+                    )}
+                    {item.type === "break" && (
+                      <span className="text-[10px] bg-gray-400/20 text-gray-300 px-2 py-0.5 rounded-full whitespace-nowrap">Break</span>
+                    )}
+                    {item.type === "special" && (
+                      <span className="text-[10px] bg-green-500/20 text-green-300 px-2 py-0.5 rounded-full whitespace-nowrap">Special</span>
+                    )}
+                    {item.type === "registration" && (
+                      <span className="text-[10px] bg-gold-500/20 text-gold-300 px-2 py-0.5 rounded-full whitespace-nowrap">Registration</span>
+                    )}
+                    {item.type === "end" && (
+                      <span className="text-[10px] bg-red-500/20 text-red-300 px-2 py-0.5 rounded-full whitespace-nowrap">End</span>
+                    )}
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
           
           <div className="text-center mt-8 md:mt-10">
@@ -245,6 +347,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      
 
       <Footer/>
     </>

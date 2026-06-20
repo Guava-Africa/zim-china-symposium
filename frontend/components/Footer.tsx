@@ -25,8 +25,8 @@ export default function Footer() {
             <div>
               <h4 className="text-white font-semibold text-sm md:text-base mb-3 md:mb-4">Contact</h4>
               <ul className="space-y-1 md:space-y-2 text-xs md:text-sm text-gray-400">
-                <li className="flex gap-2 break-all">📞 +263 242 778 899</li>
-                <li className="flex gap-2 break-all">✉️ info@zimchinasymposium.com</li>
+                <li className="flex gap-2 break-all">📞 Andy Hodges: +263 773 491 634</li>
+                <li className="flex gap-2 break-all">✉️ andy.hodges@africapaciti.com</li>
                 <li className="flex gap-2">📍 Harare, Zimbabwe</li>
               </ul>
             </div>

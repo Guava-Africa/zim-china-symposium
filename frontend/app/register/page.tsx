@@ -16,73 +16,72 @@ type FormData = {
   profileImage?: FileList;
 };
 
-export default function registerPage() {
+export default function RegisterPage() {
   const { register, handleSubmit, formState: { isSubmitting } } = useForm<FormData>();
   const [imagePreview, setImagePreview] = useState<string | null>(null);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'waiting' | 'error'>('idle');
+  const [regNumber, setRegNumber] = useState<number>(0);
   const [errorMessage, setErrorMessage] = useState<string>('');
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const MAX_REGISTRATIONS = 200;
 
   const onSubmit = async (data: FormData) => {
-  setSubmitStatus('idle');
-  setErrorMessage('');
-  
-  try {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+    setSubmitStatus('idle');
+    setErrorMessage('');
     
-    // Create FormData and append ALL fields
-    const formDataToSend = new FormData();
-    formDataToSend.append('title', data.title);
-    formDataToSend.append('fullName', data.fullName);
-    formDataToSend.append('email', data.email);
-    formDataToSend.append('phone', data.phone);
-    formDataToSend.append('nationality', data.nationality);
-    formDataToSend.append('nationalId', data.nationalId);
-    formDataToSend.append('organization', data.organization);
-    
-    // Append file if exists
-    if (selectedFile) {
-      formDataToSend.append('profileImage', selectedFile);
-    }
-    
-    // Debug: Log all FormData entries
-    console.log('📤 Sending FormData:');
-    for (let pair of formDataToSend.entries()) {
-      console.log(`   ${pair[0]}: ${pair[1]}`);
-    }
-    
-    const response = await fetch(`${apiUrl}/api/register`, {
-      method: 'POST',
-      body: formDataToSend,
-    });
-    
-    const result = await response.json();
-    console.log('📥 Response:', result);
-    
-    if (response.ok && result.success) {
-      setSubmitStatus('success');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
+    try {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+      
+      const formDataToSend = new FormData();
+      formDataToSend.append('title', data.title);
+      formDataToSend.append('fullName', data.fullName);
+      formDataToSend.append('email', data.email);
+      formDataToSend.append('phone', data.phone);
+      formDataToSend.append('nationality', data.nationality);
+      formDataToSend.append('nationalId', data.nationalId);
+      formDataToSend.append('organization', data.organization);
+      
+      if (selectedFile) {
+        formDataToSend.append('profileImage', selectedFile);
+      }
+      
+      const response = await fetch(`${apiUrl}/api/register`, {
+        method: 'POST',
+        body: formDataToSend,
+      });
+      
+      const result = await response.json();
+      console.log('📥 Response:', result);
+      
+      if (response.ok && result.success) {
+        setRegNumber(result.data.regNumber || 0);
+        
+        // Check if registration number exceeds limit
+        if (result.data.regNumber > MAX_REGISTRATIONS) {
+          setSubmitStatus('waiting');  // Show waiting list message
+        } else {
+          setSubmitStatus('success');  // Show normal success message
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        setSubmitStatus('error');
+        setErrorMessage(result.error || 'Registration failed. Please try again.');
+      }
+    } catch (error) {
+      console.error('❌ Submission error:', error);
       setSubmitStatus('error');
-      setErrorMessage(result.error || 'Registration failed. Please try again.');
+      setErrorMessage('Network error. Please check if the backend server is running.');
     }
-  } catch (error) {
-    console.error('❌ Submission error:', error);
-    setSubmitStatus('error');
-    setErrorMessage('Network error. Please check if the backend server is running.');
-  }
-};
+  };
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      // Validate file size (max 5MB)
       if (file.size > 5 * 1024 * 1024) {
         alert('File size too large. Please upload an image under 5MB.');
         return;
       }
       
-      // Validate file type
       if (!file.type.startsWith('image/')) {
         alert('Please upload an image file (JPEG, PNG, etc.)');
         return;
@@ -144,30 +143,54 @@ export default function registerPage() {
     { value: "Other", flag: "https://flagcdn.com/un.svg", code: "🌍" },
   ];
 
-  // Success Screen
+  // Success Screen (regNumber <= 200)
   if (submitStatus === 'success') {
     return (
-      <main className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+      <main className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 overflow-y-auto">
         <div className="container mx-auto max-w-2xl text-center">
           <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl p-6 md:p-12">
             <div className="text-center">
-            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-16 mb-4 md:mb-6">
-              {/* <div className="flex flex-col items-center">
-                <img src="/africapaciti.webp" alt="Africapaciti" className="h-20 w-auto md:h-27 hover:bg-white/60 hover:rounded-xl md:p-2 transition-all duration-300" />
-              </div> */}
-              <div className="flex flex-col items-center">
-                <img src="/Zimchina.webp" alt="Zimbabwe-China Symposium" className="h-20 w-auto md:h-57 hover:bg-white/60 hover:rounded-xl md:p-2 transition-all duration-300" />
+              <div className="flex flex-wrap items-center justify-center gap-6 md:gap-16 mb-4 md:mb-6">
+                <div className="flex flex-col items-center">
+                  <img src="/Zimchina.webp" alt="Zimbabwe-China Symposium" className="h-20 w-auto md:h-57 hover:bg-white/60 hover:rounded-xl md:p-2 transition-all duration-300" />
+                </div>
               </div>
-              {/* <div className="flex flex-col items-center">
-                <img src="/chamberlogo.webp" alt="Chamber of Chinese Enterprises" className="h-20 w-auto md:h-27 hover:bg-white/60 hover:rounded-xl md:p-2 transition-all duration-300" />
-              </div> */}
             </div>
-            {/* <p className="text-black text-sm md:text-lg font-bold italic tracking-wide mt-2">Building Strategic Partnerships</p> */}
-          </div>
+            
             <h1 className="text-2xl md:text-3xl font-bold text-black mb-3">Registration Successful!</h1>
+            
             <p className="text-gray-700 mb-4 md:mb-6 text-sm md:text-base">
               Thank you for registering for the Zimbabwe-China Investment Symposium.
             </p>
+            <p className="text-gray-700 mb-6 md:mb-8 text-sm md:text-base">
+              A confirmation email has been sent to your inbox. Please check your email for details.
+            </p>
+            <Link href="/" className="inline-block bg-black text-white px-5 md:px-6 py-2 rounded-full hover:bg-gray-800 transition text-sm md:text-base">
+              ← Back to Home
+            </Link>
+          </div>
+        </div>
+      </main>
+    );
+  }
+
+  // Waiting List Screen (regNumber > 200)
+  if (submitStatus === 'waiting') {
+    return (
+      <main className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 overflow-y-auto">
+        <div className="container mx-auto max-w-2xl text-center">
+          <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl p-6 md:p-12">
+            <div className="text-center">
+              <div className="flex flex-wrap items-center justify-center gap-6 md:gap-16 mb-4 md:mb-6">
+                <div className="flex flex-col items-center">
+                  <img src="/Zimchina.webp" alt="Zimbabwe-China Symposium" className="h-20 w-auto md:h-57 hover:bg-white/60 hover:rounded-xl md:p-2 transition-all duration-300" />
+                </div>
+              </div>
+            </div>
+            
+            <div className="text-6xl mb-4">⏳</div>
+            <h1 className="text-2xl md:text-3xl font-bold text-black mb-3">Thank You for Registering</h1>
+            <p className="text-xl md:text-2xl font-bold text-black mb-3">You are on the Waiting List</p>
             <p className="text-gray-700 mb-6 md:mb-8 text-sm md:text-base">
               A confirmation email has been sent to your inbox. Please check your email for details.
             </p>
@@ -195,29 +218,27 @@ export default function registerPage() {
       {/* Content */}
       <div className="relative z-10 min-h-screen pt-8 md:pt-12 pb-12 md:pb-20">
         <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-          {/* Back Button with Icon */}
+          {/* Back Button */}
           <Link href="/" className="inline-flex items-center gap-2 text-white hover:text-gold-400 mb-4 md:mb-4 transition text-sm md:text-base bg-black/30 backdrop-blur-sm px-3 py-1.5 md:py-2 rounded-full">
             <FaArrowLeft size={12} className="md:w-[14px] md:h-[14px]" /> Back to Home
           </Link>
-
-          
 
           {/* Logos Section */}
           <div className="text-center mb-8 md:mb-12 bg-white/85 rounded-xl">
             <div className="flex flex-wrap items-center justify-center gap-6 md:gap-16 mb-4 md:mb-6">
               <div className="flex flex-col items-center">
-                <img src="/Zimchina.webp" alt="Zimbabwe-China Symposium" className="h-55 w-auto md:h-47  md:p-2 transition-all duration-300" />
+                <img src="/Zimchina.webp" alt="Zimbabwe-China Symposium" className="h-55 w-auto md:h-47 md:p-2 transition-all duration-300" />
               </div>
               <div className="flex flex-col items-center">
                 <a href="https://www.africapaciti.com" target="_blank" rel="noopener noreferrer">
-                  <img src="/africapaciti.webp" alt="Africapaciti" className="h-24 w-auto md:h-47  md:p-2 transition-all duration-300" />
+                  <img src="/africapaciti.webp" alt="Africapaciti" className="h-24 w-auto md:h-47 md:p-2 transition-all duration-300" />
                 </a>
               </div>
               <div className="flex flex-col items-center">
-                <img src="/chamberlogo.webp" alt="Chamber of Chinese Enterprises" className="h-24 w-auto md:h-47  md:p-2 transition-all duration-300" />
+                <img src="/chamberlogo.webp" alt="Chamber of Chinese Enterprises" className="h-24 w-auto md:h-47 md:p-2 transition-all duration-300" />
               </div>
             </div>
-            <p className="text-black text-sm md:text-lg font-bold italic tracking-wide mt-2">Building Strategic Partnerships</p>
+            <p className="text-black text-sm md:text-lg font-bold italic tracking-wide pb-2">Building Strategic Partnerships</p>
           </div>
 
           <div className="flex flex-col lg:flex-row gap-6 md:gap-8">
@@ -316,7 +337,7 @@ export default function registerPage() {
                     />
                   </div>
 
-                  {/* Image Upload Section */}
+                  {/* Image Upload */}
                   <div>
                     <label className="block text-sm font-semibold text-black mb-1">Profile Photo</label>
                     <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
@@ -336,28 +357,27 @@ export default function registerPage() {
                     </div>
                   </div>
 
-{/* Error Message */}
-          {submitStatus === 'error' && (
-            <div className="mb-6 p-4 bg-red-500/20 backdrop-blur-sm border border-red-500 rounded-xl text-black">
-              <p className="font-semibold">❌ Registration Failed</p>
-              <p className="text-sm">{errorMessage}</p>
-            </div>
-          )}
+                  {/* Error Message */}
+                  {submitStatus === 'error' && (
+                    <div className="p-4 bg-red-500/20 backdrop-blur-sm border border-red-500 rounded-xl text-black">
+                      <p className="font-semibold">❌ Registration Failed</p>
+                      <p className="text-sm">{errorMessage}</p>
+                    </div>
+                  )}
 
-{isSubmitting ? 
-<Spinner/>
-:
-                  <button 
-                    type="submit" 
-                    disabled={isSubmitting}
-                    className="w-full cursor-pointer bg-red-600 text-white py-2.5 md:py-3 rounded-full font-bold hover:bg-red-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-base md:text-lg"
-                  >
-                    {isSubmitting ? "Submitting..." : "Submit Registration →"}
-                  </button>
-}
+                  {isSubmitting ? 
+                    <Spinner />
+                  :
+                    <button 
+                      type="submit" 
+                      className="w-full cursor-pointer bg-red-600 text-white py-2.5 md:py-3 rounded-full font-bold hover:bg-red-700 transition-all duration-300 text-base md:text-lg"
+                    >
+                      Submit Registration →
+                    </button>
+                  }
                   
                   <p className="text-[11px] md:text-xs text-gray-500 text-center mt-3 md:mt-4">
-                    By submitting this form, you agree to our terms and conditions. Our team will confirm your registration within 48 hours.
+                    By submitting this form, you agree to our terms and conditions.
                   </p>
                 </form>
               </div>
@@ -365,19 +385,11 @@ export default function registerPage() {
 
             {/* Info Column */}
             <div className="w-full lg:w-1/3 space-y-4 md:space-y-6">
-              <div className="backdrop-blur-3xl rounded-2xl shadow-xl p-5 md:p-6 text-white">
-                <h3 className="font-bold text-base md:text-lg mb-2 md:mb-3 flex items-center gap-2">
-                  <span className="text-xl">🌐</span> Translation Services
-                </h3>
-                <p className="text-xs md:text-sm text-white/90">
-                  Chinese/English interpretation will be provided throughout the symposium for all official sessions.
-                </p>
-              </div>
 
               <div className="backdrop-blur-3xl rounded-2xl shadow-xl p-5 md:p-6 text-white">
                 <h3 className="font-bold text-gold-400 text-base md:text-lg mb-2 md:mb-3">Event Details</h3>
                 <ul className="space-y-2 md:space-y-3 text-xs md:text-sm">
-                  <li className="flex gap-2 items-center">📅 <span>25 June, 2026</span></li>
+                  <li className="flex gap-2 items-center">📅 <span>2 July, 2026</span></li>
                   <li className="flex gap-2 items-center">📍 <span>Harare, Zimbabwe</span></li>
                   <li className="flex gap-2 items-center">🏛️ <span>Golden Conifer Conference Centre</span></li>
                 </ul>
@@ -386,8 +398,8 @@ export default function registerPage() {
               <div className="backdrop-blur-3xl rounded-2xl shadow-xl p-5 md:p-6 text-white">
                 <h3 className="font-bold text-base md:text-lg mb-2 md:mb-3">Need Assistance?</h3>
                 <p className="text-xs md:text-sm text-white/90 mb-2 md:mb-3">Contact our official delegation desk:</p>
-                <p className="text-xs md:text-sm">📞 +263 242 778 899</p>
-                <p className="text-xs md:text-sm break-all">✉️ registration@zimchinasymposium.com</p>
+                <p className="text-xs md:text-sm">📞 Andy Hodges: +263 773 491 634</p>
+                <p className="text-xs md:text-sm break-all">✉️ andy.hodges@africapaciti.com</p>
               </div>
             </div>
           </div>
