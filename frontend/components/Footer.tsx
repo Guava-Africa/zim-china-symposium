@@ -19,7 +19,7 @@ export default function Footer() {
                 <li><Link href="/about" className="text-gold-400 hover:text-gold-300 transition">About</Link></li>
                 <li><Link href="/panelists" className="text-gold-400 hover:text-gold-300 transition">Panelists</Link></li>
                 <li><Link href="/register" className="text-gold-400 hover:text-gold-300 transition">Register for the Symposium</Link></li>
-                <li><a href="/#schedule" className="text-gold-400 hover:text-gold-300 transition">Schedule</a></li>
+                <li><a href="/schedule" className="text-gold-400 hover:text-gold-300 transition">Schedule</a></li>
               </ul>
             </div>
             <div>

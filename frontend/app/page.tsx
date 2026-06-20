@@ -48,7 +48,7 @@ export default function Home() {
 >
   <div className="container mx-auto px-4 md:px-8 lg:px-12">
     <div className="flex md:justify-between items-center relative">
-      <div className='flex items-center gap-9 p-8 mx-auto md:mx-0'>
+      <div className='flex items-center gap-9 p-3 mx-auto md:mx-0'>
         <Link href="/" className="flex items-center justify-center md:justify-start group mx-auto md:mx-0 transition-all duration-500">
           <img 
             src={'/Zimchina.webp'} 
@@ -111,16 +111,16 @@ export default function Home() {
           </h1>
           
           <div className="space-y-1 mb-6 md:mb-8">
-            <p className="text-base sm:text-lg md:text-xl text-gray-200">
+            <p className="text-lg sm:text-lg md:text-xl text-gray-200">
               Zimbabwe-China Investment Symposium
             </p>
-            <p className="text-base sm:text-lg md:text-xl text-gray-200">
+            <p className="text-lg sm:text-lg md:text-xl text-gray-200">
               Building Strategic Partnerships
             </p>
-            <p className="text-base sm:text-lg md:text-xl text-gray-200">
+            <p className="text-lg sm:text-lg md:text-xl text-gray-200">
               Harare, Zimbabwe • 2 July 2026
             </p>
-            <p className="text-base sm:text-lg md:text-xl text-gray-200">
+            <p className="text-lg sm:text-lg md:text-xl text-gray-200">
               Golden Conifer Conference Centre
             </p>
           </div>
