@@ -56,7 +56,7 @@ export default function PanelistsPage() {
       organization: "Africapaciti Investment Group",
       topic: "Moderator: Investment Environment Plenary",
       bio: "Mr. Andy Hodges is the Group Head of Investments and Advisory Services at Africapaciti Investment Group. He is a highly regarded investment banker and a prominent figure in Zimbabwe's financial and media sectors. Mr. Hodges holds an MBA in International Business and has extensive expertise in trade finance, investment strategy, and business development. Beyond his corporate role, he is well-known as a media personality, serving as a director of ceremonies, broadcaster, and the founder of Shonaa Productions.",
-      image: "/bioPics/Moderators/Group Head of Investment and Advisory Services - Andrew F Hodges.png",
+      image: "/bioPics/Moderators/andy hodges.jpeg",
     },
     // ===== 6. OTHER MINISTERS =====
     {
@@ -111,21 +111,21 @@ export default function PanelistsPage() {
       organization: "Mashonaland East Province",
       topic: "Provincial Mining Investment Opportunities",
       bio: "Hon. Advocate Itayi Ndudzo is the Minister of State for Provincial Affairs and Devolution for Mashonaland East Province. As a legal professional and Advocate, he brings a strong legal and administrative perspective to his role in provincial governance and development.",
-      image: "/bioPics/Panelists/Minister of State for Provincial Affairs and Devolutionin Mashonaland East Province - Hon Adv I Ndudzo.png",
+      image: "/bioPics/Panelists/Minister of State for Provincial Affairs and Devolutionin Mashonaland East Province - Hon Adv I Ndudzo.jpg",
     },
-    {
+  {
       name: "Honourable R. Moyo",
       title: "Minister of State for Provincial Affairs and Devolution",
       organization: "Matabeleland North Province",
       topic: "Provincial Tourism Opportunities",
-      bio: "Hon. R. Moyo is the Minister of State for Provincial Affairs and Devolution for Matabeleland North Province. He promotes tourism development and investment in his province.",
+      bio: "Hon. R. Moyo serves as the Minister of State for Provincial Affairs and Devolution for Matabeleland North Province. He is a passionate advocate for tourism-led economic growth and works tirelessly to position his province as a prime destination for both domestic and international investment.",
     },
     {
       name: "Honourable C. Magomo",
       title: "Minister of State for Provincial Affairs and Devolution",
       organization: "Mashonaland Central Province",
       topic: "Provincial Tourism Opportunities",
-      bio: "Hon. C. Magomo is the Minister of State for Provincial Affairs and Devolution for Mashonaland Central Province. He champions tourism investment and development in his region.",
+      bio: "Hon. C. Magomo is the Minister of State for Provincial Affairs and Devolution for Mashonaland Central Province. He champions the development of tourism infrastructure and promotes the region's rich cultural heritage and natural endowments as key drivers of provincial economic growth and investment.",
     },
     {
       name: "Honourable Marian Chombo",
@@ -377,13 +377,13 @@ export default function PanelistsPage() {
       topic: "Zero Tariffs: Business Community Perspective",
       bio: "Ms. Shanel Liu is the Vice President and Vice Secretary of the Chamber of Chinese Enterprises in Zimbabwe. She holds an MBA and has extensive experience in government relations and industrial development. She plays a vital role in bridging the gap between Chinese investors and the Zimbabwean government to foster sustainable economic partnerships.",
     },
-    {
-      name: "Mr. S. Kuvarika",
-      title: "Former Chief Executive Officer",
-      organization: "Confederation of Zimbabwe Industries (CZI)",
-      topic: "Zero Tariffs: Industrial Perspective",
-      bio: "Mr. S. Kuvarika is the former Chief Executive Officer of the Confederation of Zimbabwe Industries (CZI). He has extensive experience in industrial policy, manufacturing, and business development.",
-    },
+    // {
+    //   name: "Mr. S. Kuvarika",
+    //   title: "Former Chief Executive Officer",
+    //   organization: "Confederation of Zimbabwe Industries (CZI)",
+    //   topic: "Zero Tariffs: Industrial Perspective",
+    //   bio: "Mr. S. Kuvarika is the former Chief Executive Officer of the Confederation of Zimbabwe Industries (CZI). He has extensive experience in industrial policy, manufacturing, and business development.",
+    // },
     {
       name: "Ms. Respect Gono",
       title: "Chief Director, Department of Immigration",
@@ -427,7 +427,7 @@ export default function PanelistsPage() {
       <section className="relative pt-62 pb-16 md:pt-60 md:pb-20 bg-gradient-to-br from-red-900 to-blue-900">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Meet Our Panelists</h1>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Meet our Speakers, Moderators and Panelists</h1>
             <div className="w-20 h-1 bg-gold-500 mx-auto mb-6"></div>
             <p className="text-lg md:text-xl text-blue-200">
               Distinguished leaders shaping the future of Zimbabwe-China relations
@@ -493,11 +493,6 @@ export default function PanelistsPage() {
             ))}
           </div>
           
-          {/* More Coming Soon */}
-          <div className="text-center mt-12 p-8 bg-gray-50 rounded-2xl">
-            <p className="text-gray-600">+ Additional panelists to be announced</p>
-            <p className="text-sm text-gold-600 mt-2">Stay tuned for updates</p>
-          </div>
         </div>
       </section>
 
