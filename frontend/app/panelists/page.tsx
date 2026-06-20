@@ -97,6 +97,7 @@ export default function PanelistsPage() {
       organization: "Government of Zimbabwe",
       topic: "Skills Transfer and Human Capital Development",
       bio: "Hon. Dr. Jenfan Muswere is the Minister of Skills Audit and Development. He holds multiple Doctor of Philosophy (PhD) degrees, including one in Development Studies focused on Corporate Governance, and others in Strategic Mining PPP Investments and ICT. He also holds an MBA and has training in Civil and Structural Engineering, reflecting a diverse and highly technical academic background.",
+    image:"/bioPics/Honourable Dr. Jenfan Muswere.jpg"
     },
     {
       name: "Honourable Ezra Chadzamira",
@@ -256,6 +257,7 @@ export default function PanelistsPage() {
       organization: "Caledonia Mining Corporation / Blanket Mine",
       topic: "Mining Investment Opportunities",
       bio: "Mr. Mark Learmonth is the Chief Executive Officer of Caledonia Mining Corporation, the operator of Blanket Mine. He is a graduate of Oxford University and a chartered accountant. He also serves on the Executive Committee of the Chamber of Mines of Zimbabwe, contributing his extensive financial and mining expertise to the industry.",
+    image:"/bioPics/Mr. Mark Learmonth.jpg"
     },
     {
       name: "Mr. Isaac Kwesu",
