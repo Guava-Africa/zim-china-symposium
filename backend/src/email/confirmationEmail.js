@@ -92,6 +92,10 @@ const getEmailContent = (data) => `
         </div>
         <div style="margin-bottom: 16px;">
           <div style="font-size: 14px; font-weight: 700; color: #6b7280; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;" class="dark-label">Organization</div>
+          <div style="font-size: 18px; font-weight: 700; color: #0a1928;" class="dark-value">${data.jobTitle}</div>
+        </div>
+        <div style="margin-bottom: 16px;">
+          <div style="font-size: 14px; font-weight: 700; color: #6b7280; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;" class="dark-label">Organization</div>
           <div style="font-size: 18px; font-weight: 700; color: #0a1928;" class="dark-value">${data.organization}</div>
         </div>
         <div>

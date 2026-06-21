@@ -15,7 +15,7 @@ model Registration {
   email        String   @unique
   phone        String
   nationality  String
-  nationalId   String
+  jobTitle   String
   organization String
   profilePhoto String?  @map("profile_photo") @db.LongText
   createdAt    DateTime @default(now()) @map("created_at")

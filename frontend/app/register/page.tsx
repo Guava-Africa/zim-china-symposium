@@ -9,7 +9,7 @@ type FormData = {
   fullName: string;
   email: string;
   nationality: string;
-  nationalId: string;
+  jobTitle: string;
   phone: string;
   title: string;
   organization: string;
@@ -38,7 +38,7 @@ export default function RegisterPage() {
       formDataToSend.append('email', data.email);
       formDataToSend.append('phone', data.phone);
       formDataToSend.append('nationality', data.nationality);
-      formDataToSend.append('nationalId', data.nationalId);
+      formDataToSend.append('jobTitle', data.jobTitle);
       formDataToSend.append('organization', data.organization);
       
       if (selectedFile) {
@@ -315,13 +315,13 @@ export default function RegisterPage() {
                       </select>
                     </div>
                     <div className="w-full sm:w-1/2">
-                      <label className="block text-sm font-semibold text-black mb-1">National ID/Passport Number *</label>
+                      <label className="block text-sm font-semibold text-black mb-1">Job Title *</label>
                       <input 
                         type="text" 
                         required
-                        placeholder="e.g. 123456789C43"
+                        placeholder="e.g. Minister/ Chief Executive Officer"
                         className="w-full px-3 md:px-4 py-2 md:py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition text-black placeholder-gray-400 bg-white text-sm md:text-base"
-                        {...register("nationalId", { required: true })}
+                        {...register("jobTitle", { required: true })}
                       />
                     </div>
                   </div>

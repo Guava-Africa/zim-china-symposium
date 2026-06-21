@@ -145,11 +145,11 @@ export default function PanelistsPage() {
     },
     // ===== 7. DEPUTY CHIEF SEC MANUNGO =====
     {
-      name: "Dr. Willard Lowenstern Manungo",
+      name: "Honourable Dr. Willard Lowenstern Manungo",
       title: "Deputy Chief Secretary",
       organization: "Office of the President and Cabinet",
       topic: "Aligning Chinese Investments with NDS2",
-      bio: "Dr. Willard Lowenstern Manungo is the Deputy Chief Secretary in the Office of the President and Cabinet. He has a distinguished career in public service, having previously served as the Permanent Secretary for Finance and Economic Development. Dr. Manungo is an expert in economics and public finance, playing a vital role in the formulation and implementation of Zimbabwe's national economic strategies.",
+      bio: "Honourable Dr. Willard Lowenstern Manungo is the Deputy Chief Secretary in the Office of the President and Cabinet. He has a distinguished career in public service, having previously served as the Permanent Secretary for Finance and Economic Development. Dr. Manungo is an expert in economics and public finance, playing a vital role in the formulation and implementation of Zimbabwe's national economic strategies.",
       image: "/bioPics/Speakers/Deputy Chief Secretary in the Office Of The President and Cabinet -Dr W Manungo.png",
     },
     // ===== 8. PS MUGUTI =====
@@ -158,7 +158,7 @@ export default function PanelistsPage() {
       title: "Permanent Secretary for Presidential Affairs and Devolution",
       organization: "Office of the President",
       topic: "Chinese Participation in Provincial Economies",
-      bio: "Hon. Eng. Tafadzwa Muguti is the Permanent Secretary for Presidential Affairs and Devolution in the Office of the President and Cabinet. An engineer by profession, he holds specialized qualifications in Micro Computer Technology Engineering from a City and Guilds UK affiliate college. He is recognized for his proactive approach to governance, infrastructure development, and addressing administrative inefficiencies.",
+      bio: "Hon. Eng. Tafadzwa Muguti is the Permanent Secretary for Presidential Affairs and Devolution in the Office of the President. He is an accomplished businessman and dynamic leadership expert. He is responsible for all Presidium special assignments and oversees Zimbabwe’s devolution policy across all ten Provinces. An engineer and financial expert by profession, he holds specialized qualifications in Banking and Risk Management from the University of South Africa (UNISA), EDP from the University of Zimbabwe and Micro Computer Technology Engineering from City and Guilds UK among many other post graduate qualifications. He is one of the young leaders in Government recognized for his proactive approach to governance, investment promotion, infrastructure development and addressing administrative inefficiencies.",
       image: "/bioPics/Speakers/Permanent Secretary for presidential Affairs and Devolution in the Office Of The President - Hon Eng Tafadzwa Muguti.png",
     },
     // ===== 9. SG CHAMBER CHINESE =====
@@ -252,12 +252,12 @@ export default function PanelistsPage() {
       bio: "Dr. Tsitsi Choruma Dozwa is a Commissioner at the Zimbabwe Land Commission and serves as the Secretary for Service Commissions. She holds multiple advanced degrees, including a Doctor of Education (Ed.D.) from Seattle University and a PhD in Comparative Politics from Michigan State University. She is an expert in organizational leadership and public policy.",
     },
     {
-      name: "Mr. Mark Learmonth",
+      name: "Mr. P Magaramombe",
       title: "Chief Executive Officer",
-      organization: "Caledonia Mining Corporation / Blanket Mine",
+      organization: "Fidelity Gold Refinery",
       topic: "Mining Investment Opportunities",
-      bio: "Mr. Mark Learmonth is the Chief Executive Officer of Caledonia Mining Corporation, the operator of Blanket Mine. He is a graduate of Oxford University and a chartered accountant. He also serves on the Executive Committee of the Chamber of Mines of Zimbabwe, contributing his extensive financial and mining expertise to the industry.",
-    image:"/bioPics/Mr. Mark Learmonth.jpg"
+      // bio: "Mr. Mark Learmonth is the Chief Executive Officer of Caledonia Mining Corporation, the operator of Blanket Mine. He is a graduate of Oxford University and a chartered accountant. He also serves on the Executive Committee of the Chamber of Mines of Zimbabwe, contributing his extensive financial and mining expertise to the industry.",
+    // image:"/bioPics/Mr. Mark Learmonth.jpg"
     },
     {
       name: "Mr. Isaac Kwesu",

@@ -102,9 +102,9 @@ app.post('/api/register', limiter, upload.single('profileImage'), async (req, re
   try {
     console.log('📝 Registration request received');
     
-    const { title, fullName, email, phone, nationality, nationalId, organization } = req.body;
+    const { title, fullName, email, phone, nationality, jobTitle, organization } = req.body;
     
-    console.log('📦 Data:', { title, fullName, email, phone, nationality, nationalId, organization });
+    console.log('📦 Data:', { title, fullName, email, phone, nationality, jobTitle, organization });
     console.log('📎 File:', req.file ? req.file.filename : 'No file');
     
     // Validate required fields
@@ -114,7 +114,7 @@ app.post('/api/register', limiter, upload.single('profileImage'), async (req, re
     if (!email) missingFields.push('email');
     if (!phone) missingFields.push('phone');
     if (!nationality) missingFields.push('nationality');
-    if (!nationalId) missingFields.push('nationalId');
+    if (!jobTitle) missingFields.push('jobTitle');
     if (!organization) missingFields.push('organization');
     
     if (missingFields.length > 0) {
@@ -157,7 +157,7 @@ app.post('/api/register', limiter, upload.single('profileImage'), async (req, re
         email,
         phone,
         nationality,
-        nationalId,
+        jobTitle,
         organization,
         profilePhoto: profilePhotoPath,
       }
@@ -227,7 +227,7 @@ app.get('/api/registrations', async (req, res) => {
     
     if (fieldsParam) {
       const fields = fieldsParam.split(',').map(f => f.trim());
-      const validFields = ['id', 'regNumber', 'title', 'fullName', 'email', 'phone', 'nationality', 'nationalId', 'organization', 'profilePhoto', 'createdAt'];
+      const validFields = ['id', 'regNumber', 'title', 'fullName', 'email', 'phone', 'nationality', 'jobTitle', 'organization', 'profilePhoto', 'createdAt'];
       
       fields.forEach(field => {
         if (validFields.includes(field)) {
@@ -282,7 +282,7 @@ app.get('/api/export/word/all/regist', async (req, res) => {
     const limit = req.query.limit ? parseInt(req.query.limit) : null;
     
     // Build select object
-    const validFields = ['id', 'regNumber', 'title', 'fullName', 'email', 'phone', 'nationality', 'nationalId', 'organization', 'profilePhoto', 'createdAt'];
+    const validFields = ['id', 'regNumber', 'title', 'fullName', 'email', 'phone', 'nationality', 'jobTitle', 'organization', 'profilePhoto', 'createdAt'];
     const selectFields = {};
     fields.forEach(field => {
       if (validFields.includes(field)) {
