@@ -15,11 +15,11 @@ export default function Footer() {
             </div>
             <div>
               <h4 className="text-white font-semibold text-sm md:text-base mb-3 md:mb-4">Quick Links</h4>
-              <ul className="space-y-1 md:space-y-2 text-xs md:text-sm">
-                <li><Link href="/about" className="text-gold-400 hover:text-gold-300 transition">About</Link></li>
-                <li><Link href="/panelists" className="text-gold-400 hover:text-gold-300 transition">Panelists</Link></li>
-                <li><Link href="/register" className="text-gold-400 hover:text-gold-300 transition">Register for the Symposium</Link></li>
-                <li><a href="/schedule" className="text-gold-400 hover:text-gold-300 transition">Schedule</a></li>
+              <ul className="space-y-1 md:space-y-2 text-xs md:text-sm text-white">
+                <li><Link href="/about" className=" hover:text-yellow-300 transition">About</Link></li>
+                <li><Link href="/panelists" className=" hover:text-yellow-300 transition">Panelists</Link></li>
+                <li><Link href="/register" className=" hover:text-yellow-300 transition">Register for the Symposium</Link></li>
+                <li><a href="/schedule" className=" hover:text-yellow-300 transition">Schedule</a></li>
               </ul>
             </div>
             <div>
@@ -33,16 +33,16 @@ export default function Footer() {
             <div>
               <h4 className="text-white font-semibold text-sm md:text-base mb-3 md:mb-4">Follow Us</h4>
               <div className="flex gap-3 md:gap-4">
-                <a href="#" className="w-8 h-8 md:w-10 md:h-10 bg-navy-800 rounded-full flex items-center justify-center text-gold-400 hover:text-gold-300 hover:bg-navy-700 transition text-sm md:text-xl">
+                <a href="#" className="w-8 h-8 md:w-10 md:h-10 bg-slate-800 rounded-full flex items-center justify-center text-white hover:text-yellow-300 hover:bg-slate-700 transition text-sm md:text-xl">
                   <FaFacebookF />
                 </a>
-                <a href="#" className="w-8 h-8 md:w-10 md:h-10 bg-navy-800 rounded-full flex items-center justify-center text-gold-400 hover:text-gold-300 hover:bg-navy-700 transition text-sm md:text-xl">
+                <a href="#" className="w-8 h-8 md:w-10 md:h-10 bg-slate-800 rounded-full flex items-center justify-center text-white hover:text-yellow-300 hover:bg-slate-700 transition text-sm md:text-xl">
                   <FaTwitter />
                 </a>
-                <a href="#" className="w-8 h-8 md:w-10 md:h-10 bg-navy-800 rounded-full flex items-center justify-center text-gold-400 hover:text-gold-300 hover:bg-navy-700 transition text-sm md:text-xl">
+                <a href="#" className="w-8 h-8 md:w-10 md:h-10 bg-slate-800 rounded-full flex items-center justify-center text-white hover:text-yellow-300 hover:bg-slate-700 transition text-sm md:text-xl">
                   <FaInstagram />
                 </a>
-                <a href="#" className="w-8 h-8 md:w-10 md:h-10 bg-navy-800 rounded-full flex items-center justify-center text-gold-400 hover:text-gold-300 hover:bg-navy-700 transition text-sm md:text-xl">
+                <a href="#" className="w-8 h-8 md:w-10 md:h-10 bg-slate-800 rounded-full flex items-center justify-center text-white hover:text-yellow-300 hover:bg-slate-700 transition text-sm md:text-xl">
                   <FaLinkedinIn />
                 </a>
               </div>

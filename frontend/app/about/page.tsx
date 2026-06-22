@@ -42,7 +42,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">About the Symposium</h1>
-            <div className="w-20 h-1 bg-gold-500 mx-auto mb-6"></div>
+            <div className="w-20 h-1 bg-yellow-500 mx-auto mb-6"></div>
             <p className="text-xl md:text-2xl text-blue-200">
               Strengthening Relations to Unlock Zimbabwe's Potential
             </p>
@@ -108,7 +108,7 @@ export default function AboutPage() {
                   { title: "Identify Solutions", desc: "Identify practical solutions to challenges affecting trade and investment" },
                   { title: "Actionable Recommendations", desc: "Develop actionable recommendations for strengthening long-term Zimbabwe-China cooperation" },
                 ].map((item, idx) => (
-                  <div key={idx} className="bg-gray-50 p-5 rounded-xl border-l-4 border-gold-500">
+                  <div key={idx} className="bg-gray-50 p-5 rounded-xl border-l-4 border-yellow-500">
                     <h3 className="font-bold text-black text-xl mb-2">{item.title}</h3>
                     <p className="text-gray-600 text-base">{item.desc}</p>
                   </div>
@@ -202,7 +202,7 @@ export default function AboutPage() {
             <div className="mb-12 mt-16">
               <div className="flex items-center gap-4 mb-6">
                 <img src="/africapaciti.png" alt="Africapaciti" className="h-16 md:h-20 w-auto" />
-                <div className="w-16 h-1 bg-gold-500"></div>
+                <div className="w-16 h-1 bg-yellow-500"></div>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">Why Africapaciti?</h2>
               <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8 border border-gray-200">
@@ -238,7 +238,7 @@ export default function AboutPage() {
             <div className="mb-12">
               <div className="flex items-center gap-4 mb-6">
                 <img src="/chamberlogo.webp" alt="The Chamber of Chinese Enterprises in Zimbabwe" className="h-16 md:h-20 w-auto" />
-                <div className="w-16 h-1 bg-gold-500"></div>
+                <div className="w-16 h-1 bg-yellow-500"></div>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">The Chamber of Chinese Enterprises in Zimbabwe</h2>
               <div className="bg-gradient-to-br from-red-50 to-gray-50 rounded-2xl p-6 md:p-8 border border-gray-200">
@@ -272,7 +272,7 @@ export default function AboutPage() {
 
             {/* Conclusion - Darker Background */}
             <div className="mt-16 bg-gradient-to-br from-blue-700 to-slate-900 rounded-2xl p-8 text-white border border-yellow-500/20">
-              <h3 className="text-3xl font-bold mb-4 text-gold-400">Conclusion</h3>
+              <h3 className="text-3xl font-bold mb-4 text-yellow-400">Conclusion</h3>
               <p className="text-gray-300 leading-relaxed mb-4 text-lg">
                 The Zimbabwe-China Investment Symposium 2026 represents a significant milestone in advancing bilateral cooperation and creating sustainable pathways for economic growth and investment.
               </p>

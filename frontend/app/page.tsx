@@ -174,7 +174,7 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start mb-10">
             <div className="w-full lg:w-1/2">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-2 md:mb-3">Venue</h2>
-              <div className="w-16 h-1 bg-gold-500 mb-4 md:mb-5"></div>
+              <div className="w-16 h-1 bg-yellow-500 mb-4 md:mb-5"></div>
               <h3 className="text-xl md:text-2xl font-semibold text-black mb-2 md:mb-3">Golden Conifer Wedding & Conference Centre</h3>
               <p className="text-gray-600 mb-4 md:mb-5 leading-relaxed text-sm md:text-base">
                 Zimbabwe's premier venue for high-level international summits, equipped with state-of-the-art facilities and translation services.
@@ -277,9 +277,9 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-8 md:mb-10">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">Event Schedule Summary</h2>
-            <div className="w-16 h-1 bg-gold-500 mx-auto"></div>
+            <div className="w-16 h-1 bg-yellow-500 mx-auto"></div>
             <p className="text-blue-200 mt-3 text-xs md:text-sm">2 July 2026 • Harare, Zimbabwe</p>
-            <Link href="/schedule" className="inline-block mt-4 text-gold-400 hover:text-gold-300 transition text-sm font-medium underline">
+            <Link href="/schedule" className="inline-block mt-4 text-yellow-400 hover:text-yellow-300 transition text-sm font-medium underline">
               View Full Detailed Schedule →
             </Link>
           </div>
@@ -290,7 +290,7 @@ export default function Home() {
               let borderClass = "";
               
               if (item.type === "registration") {
-                bgClass = "bg-gold-500/10 border-l-4 border-gold-500";
+                bgClass = "bg-yellow-500/10 border-l-4 border-yellow-500";
               } else if (item.type === "break") {
                 bgClass = "bg-gray-500/10 border-l-4 border-gray-400";
               } else if (item.type === "special") {
@@ -313,7 +313,7 @@ export default function Home() {
                         <div className="text-xs text-blue-300 mt-0.5">Panel Discussion • Featured Speakers</div>
                       )}
                       {item.type === "registration" && (
-                        <div className="text-xs text-gold-300 mt-0.5">Check-in & Welcome Coffee</div>
+                        <div className="text-xs text-yellow-300 mt-0.5">Check-in & Welcome Coffee</div>
                       )}
                     </div>
                     {item.type === "session" && (
@@ -326,7 +326,7 @@ export default function Home() {
                       <span className="text-[10px] bg-green-500/20 text-green-300 px-2 py-0.5 rounded-full whitespace-nowrap">Special</span>
                     )}
                     {item.type === "registration" && (
-                      <span className="text-[10px] bg-gold-500/20 text-white px-2 py-0.5 rounded-full whitespace-nowrap">Registration</span>
+                      <span className="text-[10px] bg-yellow-500/20 text-white px-2 py-0.5 rounded-full whitespace-nowrap">Registration</span>
                     )}
                     {item.type === "end" && (
                       <span className="text-[10px] bg-red-500/20 text-red-300 px-2 py-0.5 rounded-full whitespace-nowrap">End</span>

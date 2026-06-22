@@ -442,7 +442,7 @@ export default function PanelistsPage() {
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Meet our Speakers, Moderators and Panelists</h1>
-            <div className="w-20 h-1 bg-gold-500 mx-auto mb-6"></div>
+            <div className="w-20 h-1 bg-yellow-500 mx-auto mb-6"></div>
             <p className="text-lg md:text-xl text-blue-200">
               Distinguished leaders shaping the future of Zimbabwe-China relations
             </p>
@@ -493,9 +493,9 @@ export default function PanelistsPage() {
                   <p className="text-red-600 text-sm font-semibold mb-1">{panelist.title}</p>
                   <p className="text-gray-500 text-sm mb-2">{panelist.organization}</p>
                   
-                  <div className="bg-gold-50 rounded-lg p-3 mb-3">
-                    <p className="text-xs text-gray-700">
-                      <span className="font-semibold text-gold-600">Topic:</span> {panelist.topic}
+                  <div className="bg-gray-200 rounded-lg p-3 mb-3">
+                    <p className="text-sm text-gray-700">
+                      <span className="font-semibold text-red-600">Topic:</span> {panelist.topic}
                     </p>
                   </div>
                   
@@ -511,7 +511,7 @@ export default function PanelistsPage() {
       </section>
 
       {/* ===== CTA SECTION ===== */}
-      <section className="py-16 bg-gradient-to-r from-navy-900 to-blue-900">
+      <section className="py-16 bg-gradient-to-r from-slate-900 to-blue-900">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Join These Distinguished Leaders</h2>
           <p className="text-blue-200 mb-6">Secure your seat at the premier investment symposium</p>

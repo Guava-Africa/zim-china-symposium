@@ -220,7 +220,7 @@ export default function RegisterPage() {
       <div className="relative z-10 min-h-screen pt-8 md:pt-12 pb-12 md:pb-20">
         <div className="container mx-auto px-4 md:px-6 max-w-6xl">
           {/* Back Button */}
-          <Link href="/" className="inline-flex items-center gap-2 text-white hover:text-gold-400 mb-4 md:mb-4 transition text-sm md:text-base bg-black/30 backdrop-blur-sm px-3 py-1.5 md:py-2 rounded-full">
+          <Link href="/" className="inline-flex items-center gap-2 text-white hover:text-yellow-400 mb-4 md:mb-4 transition text-sm md:text-base bg-black/30 backdrop-blur-sm px-3 py-1.5 md:py-2 rounded-full">
             <FaArrowLeft size={12} className="md:w-[14px] md:h-[14px]" /> Back to Home
           </Link>
 
@@ -351,7 +351,7 @@ export default function RegisterPage() {
                         />
                       </div>
                       {imagePreview && (
-                        <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg overflow-hidden border-2 border-gold-500 flex-shrink-0">
+                        <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg overflow-hidden border-2 border-yellow-500 flex-shrink-0">
                           <img src={imagePreview} alt="Preview" className="w-full h-full object-cover" />
                         </div>
                       )}
@@ -388,7 +388,7 @@ export default function RegisterPage() {
             <div className="w-full lg:w-1/3 space-y-4 md:space-y-6">
 
               <div className="backdrop-blur-3xl rounded-2xl shadow-xl p-5 md:p-6 text-white">
-                <h3 className="font-bold text-gold-400 text-base md:text-lg mb-2 md:mb-3">Event Details</h3>
+                <h3 className="font-bold text-yellow-400 text-base md:text-lg mb-2 md:mb-3">Event Details</h3>
                 <ul className="space-y-2 md:space-y-3 text-xs md:text-sm">
                   <li className="flex gap-2 items-center">📅 <span>2 July, 2026</span></li>
                   <li className="flex gap-2 items-center">📍 <span>Harare, Zimbabwe</span></li>

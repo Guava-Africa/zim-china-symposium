@@ -42,7 +42,7 @@ export default function SchedulePage() {
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Full Event Schedule</h1>
-            <div className="w-20 h-1 bg-gold-500 mx-auto mb-6"></div>
+            <div className="w-20 h-1 bg-yellow-500 mx-auto mb-6"></div>
             <p className="text-lg md:text-xl text-blue-200">
               2 July 2026 • Golden Conifer Conference Centre, Harare
             </p>
