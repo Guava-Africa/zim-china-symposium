@@ -302,10 +302,10 @@ export default function Home() {
               return (
                 <div key={idx} className={`p-3 md:p-4 rounded-lg mb-2 transition ${bgClass}`}>
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                    <div className="text-gold-400 font-bold text-xs md:text-sm sm:w-28 flex-shrink-0">
+                    <div className="text-white font-bold text-xs md:text-sm sm:w-28 flex-shrink-0">
                       {item.time}
                     </div>
-                    <div className="flex-1 min-w-0">
+                    <div className="flex-1 min-w-0 ">
                       <div className="text-white font-semibold text-sm md:text-base break-words">
                         {item.title}
                       </div>
@@ -317,16 +317,16 @@ export default function Home() {
                       )}
                     </div>
                     {item.type === "session" && (
-                      <span className="text-[10px] bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded-full whitespace-nowrap">Session</span>
+                      <span className="text-[10px] bg-blue-500/20 text-white px-2 py-0.5 rounded-full whitespace-nowrap">Session</span>
                     )}
                     {item.type === "break" && (
-                      <span className="text-[10px] bg-gray-400/20 text-gray-300 px-2 py-0.5 rounded-full whitespace-nowrap">Break</span>
+                      <span className="text-[10px] bg-gray-400/20 text-white px-2 py-0.5 rounded-full whitespace-nowrap">Break</span>
                     )}
                     {item.type === "special" && (
                       <span className="text-[10px] bg-green-500/20 text-green-300 px-2 py-0.5 rounded-full whitespace-nowrap">Special</span>
                     )}
                     {item.type === "registration" && (
-                      <span className="text-[10px] bg-gold-500/20 text-gold-300 px-2 py-0.5 rounded-full whitespace-nowrap">Registration</span>
+                      <span className="text-[10px] bg-gold-500/20 text-white px-2 py-0.5 rounded-full whitespace-nowrap">Registration</span>
                     )}
                     {item.type === "end" && (
                       <span className="text-[10px] bg-red-500/20 text-red-300 px-2 py-0.5 rounded-full whitespace-nowrap">End</span>
