@@ -142,6 +142,15 @@ app.post('/api/register', limiter, upload.single('profileImage'), async (req, re
       });
     }
 
+    // Check registration limit
+    const currentCount = await prisma.registration.count();
+    if (currentCount >= MAX_REGISTRATIONS) {
+      return res.status(409).json({ 
+        success: false, 
+        error: `Registration is full. Maximum ${MAX_REGISTRATIONS} attendees.` 
+      });
+    }
+
     // Store file path if uploaded
     let profilePhotoPath = null;
     if (req.file) {
@@ -163,6 +172,10 @@ app.post('/api/register', limiter, upload.single('profileImage'), async (req, re
       }
     });
 
+    const remaining = MAX_REGISTRATIONS - (currentCount + 1);
+    console.log('✅ Registration saved, ID:', registration.id, 'Number:', registration.regNumber);
+    console.log(`📊 ${remaining} spots remaining`);
+
     // Send confirmation email
     if (process.env.RESEND_API_KEY) {
       try {
@@ -170,6 +183,7 @@ app.post('/api/register', limiter, upload.single('profileImage'), async (req, re
           id: registration.id,
           regNumber: registration.regNumber,
           title,
+          jobTitle,
           fullName,
           organization,
           nationality
@@ -193,6 +207,8 @@ app.post('/api/register', limiter, upload.single('profileImage'), async (req, re
       data: { 
         regNumber: registration.regNumber,
         email: registration.email,
+        remainingSpots: remaining,
+        isFull: remaining === 0
       }
     });
 
@@ -218,10 +234,9 @@ app.post('/api/register', limiter, upload.single('profileImage'), async (req, re
   }
 });
 
-// ===== GET ALL REGISTRATIONS (with optional field filtering) =====
+// ===== GET ALL REGISTRATIONS =====
 app.get('/api/registrations', async (req, res) => {
   try {
-    // Get fields parameter - e.g., ?fields=regNumber,fullName,email,organization
     const fieldsParam = req.query.fields;
     let selectFields = {};
     
@@ -235,7 +250,6 @@ app.get('/api/registrations', async (req, res) => {
         }
       });
     } else {
-      // Default fields if none specified
       selectFields = {
         id: true,
         regNumber: true,
@@ -244,6 +258,7 @@ app.get('/api/registrations', async (req, res) => {
         email: true,
         phone: true,
         nationality: true,
+        jobTitle: true,
         organization: true,
         createdAt: true
       };
@@ -274,14 +289,11 @@ app.get('/api/registrations', async (req, res) => {
 // ===== EXPORT WORD DOCUMENT =====
 app.get('/api/export/word/all/regist', async (req, res) => {
   try {
-    // Get fields parameter - e.g., ?fields=regNumber,fullName,email,organization,nationality,phone,title
-    const fieldsParam = req.query.fields || 'regNumber,title,fullName,email,phone,organization,nationality';
+    const fieldsParam = req.query.fields || 'regNumber,title,fullName,email,phone,organization,nationality,jobTitle';
     const fields = fieldsParam.split(',').map(f => f.trim());
     
-    // Get limit parameter (optional)
     const limit = req.query.limit ? parseInt(req.query.limit) : null;
     
-    // Build select object
     const validFields = ['id', 'regNumber', 'title', 'fullName', 'email', 'phone', 'nationality', 'jobTitle', 'organization', 'profilePhoto', 'createdAt'];
     const selectFields = {};
     fields.forEach(field => {
@@ -290,10 +302,8 @@ app.get('/api/export/word/all/regist', async (req, res) => {
       }
     });
     
-    // Always include profilePhoto for images
     selectFields.profilePhoto = true;
     
-    // Default to all fields if none valid
     if (Object.keys(selectFields).length === 0) {
       selectFields = {
         id: true,
@@ -304,12 +314,12 @@ app.get('/api/export/word/all/regist', async (req, res) => {
         phone: true,
         organization: true,
         nationality: true,
+        jobTitle: true,
         profilePhoto: true,
         createdAt: true
       };
     }
 
-    // Fetch registrations
     const registrations = await prisma.registration.findMany({
       orderBy: { regNumber: 'asc' },
       take: limit || undefined,
@@ -320,12 +330,10 @@ app.get('/api/export/word/all/regist', async (req, res) => {
       return res.status(404).json({ success: false, error: 'No registrations found' });
     }
 
-    // Build full URLs for photos and fetch images
     const baseUrl = `${req.protocol}://${req.get('host')}`;
     const registrationsWithImages = await Promise.all(registrations.map(async (reg) => {
       let imageBuffer = null;
       
-      // Fetch the image if profilePhoto exists
       if (reg.profilePhoto) {
         try {
           const imagePath = path.join(__dirname, '..', reg.profilePhoto);
@@ -347,7 +355,6 @@ app.get('/api/export/word/all/regist', async (req, res) => {
       };
     }));
 
-    // Generate Word document with images
     const docBuffer = await createWordDocumentWithImages({
       registrations: registrationsWithImages,
       fields: Object.keys(selectFields).filter(f => f !== 'profilePhoto'),
@@ -356,7 +363,6 @@ app.get('/api/export/word/all/regist', async (req, res) => {
       venue: 'Golden Conifer Conference Centre, Harare'
     });
 
-    // Send the document
     res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
     res.setHeader('Content-Disposition', `attachment; filename=registrations_${new Date().toISOString().split('T')[0]}.docx`);
     res.send(docBuffer);
@@ -366,7 +372,6 @@ app.get('/api/export/word/all/regist', async (req, res) => {
     res.status(500).json({ success: false, error: 'Error generating document: ' + error.message });
   }
 });
-
 
 // Start server
 app.listen(PORT, () => {

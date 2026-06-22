@@ -273,7 +273,7 @@ export default function Home() {
       </section>
 
       {/* ===== SCHEDULE SUMMARY SECTION ===== */}
-      <section id="schedule" className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-navy-900 to-blue-900">
+      <section id="schedule" className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-black to-blue-900">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-8 md:mb-10">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">Event Schedule Summary</h2>
