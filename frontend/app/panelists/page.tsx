@@ -48,6 +48,7 @@ export default function PanelistsPage() {
       organization: "Chamber of Chinese Enterprises in Zimbabwe / Dinson Iron and Steel Company (DISCO)",
       topic: "Welcome Remarks and Introduction of Ambassador",
       bio: "Mr. Benson Xu is the Chairperson of the Chinese Chamber of Commerce in Zimbabwe and the Managing Director of Dinson Iron and Steel Company (DISCO). He has been instrumental in spearheading major industrial projects, notably the Manhize steel plant, which is a cornerstone of Zimbabwe's industrialization strategy. His academic background includes studies at LS University, and he possesses significant experience in large-scale investment and infrastructure development.",
+    image:'/bioPics/Benson.jpeg'
     },
     // ===== 5. ANDY HODGES =====
     {
@@ -105,6 +106,7 @@ export default function PanelistsPage() {
       organization: "Masvingo Province",
       topic: "Provincial Mining Investment Opportunities",
       bio: "Hon. Ezra Chadzamira is the Minister of State for Provincial Affairs and Devolution for Masvingo Province. He is a dedicated provincial leader and politician, focused on regional economic development, devolution, and the implementation of national programs at the provincial level.",
+    image:'/bioPics/Honourable Ezra Chadzamira.jpeg'
     },
     {
       name: "Honourable Advocate Itayi Ndudzo",
@@ -120,13 +122,15 @@ export default function PanelistsPage() {
       organization: "Matabeleland North Province",
       topic: "Provincial Tourism Opportunities",
       bio: "Hon. R. Moyo serves as the Minister of State for Provincial Affairs and Devolution for Matabeleland North Province. He is a passionate advocate for tourism-led economic growth and works tirelessly to position his province as a prime destination for both domestic and international investment.",
-    },
+   image:'/bioPics/Honourable R. Moyo.jpg'
+   },
     {
-      name: "Honourable C. Magomo",
+      name: "Honourable Christopher Magomo",
       title: "Minister of State for Provincial Affairs and Devolution",
       organization: "Mashonaland Central Province",
       topic: "Provincial Tourism Opportunities",
-      bio: "Hon. C. Magomo is the Minister of State for Provincial Affairs and Devolution for Mashonaland Central Province. He champions the development of tourism infrastructure and promotes the region's rich cultural heritage and natural endowments as key drivers of provincial economic growth and investment.",
+      bio: "Hon. Christopher Magomo is the Minister of State for Provincial Affairs and Devolution for Mashonaland Central Province. He champions the development of tourism infrastructure and promotes the region's rich cultural heritage and natural endowments as key drivers of provincial economic growth and investment.",
+    image:'/bioPics/Honourable C. Magomo.jpeg'
     },
     {
       name: "Honourable Marian Chombo",
@@ -134,7 +138,8 @@ export default function PanelistsPage() {
       organization: "Mashonaland West Province",
       topic: "Provincial Land Management",
       bio: "Hon. Marian Chombo is the Minister of State for Provincial Affairs and Devolution for Mashonaland West Province. She is an experienced politician and administrator, overseeing regional development and the implementation of government policies within her province.",
-    },
+    image:'/bioPics/Honourable Marian Chombo.jpg'
+  },
     {
       name: "Honourable Advocate Misheck Mugadza",
       title: "Minister of State for Provincial Affairs and Devolution",
@@ -158,7 +163,7 @@ export default function PanelistsPage() {
       title: "Permanent Secretary for Presidential Affairs and Devolution",
       organization: "Office of the President",
       topic: "Chinese Participation in Provincial Economies",
-      bio: "Hon. Eng. Tafadzwa Muguti is the Permanent Secretary for Presidential Affairs and Devolution in the Office of the President. He is an accomplished businessman and dynamic leadership expert. He is responsible for all Presidium special assignments and oversees Zimbabwe’s devolution policy across all ten Provinces. An engineer and financial expert by profession, he holds specialized qualifications in Banking and Risk Management from the University of South Africa (UNISA), EDP from the University of Zimbabwe and Micro Computer Technology Engineering from City and Guilds UK among many other post graduate qualifications. He is one of the young leaders in Government recognized for his proactive approach to governance, investment promotion, infrastructure development and addressing administrative inefficiencies.",
+      bio: "Hon. Eng. Tafadzwa Muguti is the Permanent Secretary for Presidential Affairs and Devolution in the Office of the President. He is an accomplished businessman and dynamic leadership expert, responsible for overseeing all Presidential affairs and the country's Devolution programme. Recognized as one of the young leaders in Government, he is known for his proactive approach to governance and commitment to addressing administrative inefficiencies.",
       image: "/bioPics/Speakers/Permanent Secretary for presidential Affairs and Devolution in the Office Of The President - Hon Eng Tafadzwa Muguti.png",
     },
     // ===== 9. SG CHAMBER CHINESE =====
@@ -168,6 +173,7 @@ export default function PanelistsPage() {
       organization: "Chamber of Chinese Enterprises in Zimbabwe",
       topic: "Closing Remarks and Vote of Thanks",
       bio: "Mr. William Wen is the Secretary General of the Chinese Chamber of Enterprises in Zimbabwe. He holds a Master of Accounting and Financial Analysis from Hong Kong Polytechnic University. He is a key facilitator of business relations, providing financial and strategic support to Chinese enterprises operating in Zimbabwe.",
+    image: '/bioPics/William wen, SG OF CCEZ.jpeg'
     },
     // ===== 10. DEPUTY MINISTERS =====
     {
@@ -250,6 +256,7 @@ export default function PanelistsPage() {
       organization: "Zimbabwe Land Commission",
       topic: "Land Policy and Administration",
       bio: "Dr. Tsitsi Choruma Dozwa is a Commissioner at the Zimbabwe Land Commission and serves as the Secretary for Service Commissions. She holds multiple advanced degrees, including a Doctor of Education (Ed.D.) from Seattle University and a PhD in Comparative Politics from Michigan State University. She is an expert in organizational leadership and public policy.",
+   image:"/bioPics/Dr-Tsitsi-Choruma.jpg"
     },
     {
       name: "Mr. P Magaramombe",
@@ -257,7 +264,7 @@ export default function PanelistsPage() {
       organization: "Fidelity Gold Refinery",
       topic: "Mining Investment Opportunities",
       // bio: "Mr. Mark Learmonth is the Chief Executive Officer of Caledonia Mining Corporation, the operator of Blanket Mine. He is a graduate of Oxford University and a chartered accountant. He also serves on the Executive Committee of the Chamber of Mines of Zimbabwe, contributing his extensive financial and mining expertise to the industry.",
-    // image:"/bioPics/Mr. Mark Learmonth.jpg"
+    image:"/bioPics/Mr. P Magaramombe.jpg"
     },
     {
       name: "Mr. Isaac Kwesu",
@@ -289,6 +296,7 @@ export default function PanelistsPage() {
       organization: "Bikita Minerals",
       topic: "Land Management for Investment",
       bio: "Ms. Yu Dongping is the Chief Executive Officer of Bikita Minerals. As a leading executive in the mining sector, she oversees the operations of one of Zimbabwe's most significant lithium mines, contributing to the country's position in the global green energy supply chain.",
+    image:'/bioPics/Ms. Yu dongping.jpeg'
     },
     {
       name: "Mr. Chris Mugaga",
@@ -320,6 +328,7 @@ export default function PanelistsPage() {
       organization: "Embassy of the People's Republic of China",
       topic: "Unpacking China's Zero Tariffs Trade Policy",
       bio: "Mr. Huang Minghai serves as the Director for Trade and the Economic & Commercial Counsellor at the Embassy of the People's Republic of China in Zimbabwe. He is a central figure in coordinating trade relations and economic cooperation between the two countries, focusing on investment facilitation and bilateral trade agreements.",
+    image: '/bioPics/Mr.huang minghai commercial concilor from chinsese embassy.jpeg'
     },
     {
       name: "Mr. T. Chimedza",
@@ -349,6 +358,7 @@ export default function PanelistsPage() {
       organization: "Lithium Producer Association / Bikita Minerals",
       topic: "Lithium Mining and Beneficiation",
       bio: "Mr. Gong Xuedong is the Chairman of the Lithium Producer Association and the Managing Director of Bikita Minerals. He is a pivotal figure in Zimbabwe's lithium industry, advocating for value addition, sustainable mining practices, and the strategic development of the country's mineral wealth.",
+    image:'/bioPics/MR.GONG XUEDONG CEO OF BIKITA.jpeg'
     },
     {
       name: "Mr. Zhao Ke",
@@ -371,6 +381,7 @@ export default function PanelistsPage() {
       organization: "Zimbabwe National Residents Association Organisation (ZNRAO)",
       topic: "Residents' Rights and Land Issues",
       bio: "Mr. Shalvar Chikomba is the Chairperson of the Zimbabwe National Residents Association (ZNOART). Educated at Glen Norah High, he is a prominent community leader who advocates for residents' rights, improved service delivery, and sustainable urban development.",
+    image:'/bioPics/Mr. Shalvar Chikomba.jpg'
     },
     {
       name: "Ms. Shanel Liu",
@@ -392,6 +403,7 @@ export default function PanelistsPage() {
       organization: "Department of Immigration",
       topic: "Unpacking Zimbabwe's Immigration Policy for Investors",
       bio: "Ms. Respect Gono is the Chief Director of the Department of Immigration. With over 27 years of experience in the civil service, including a tenure in the Office of the President and Cabinet, she is a senior administrator focused on immigration policy, border management, and e-government initiatives.",
+   image:'/bioPics/Ms. Respect Gono.jpg'
     },
     {
       name: "Mrs. Bridget Makani",
@@ -469,8 +481,8 @@ export default function PanelistsPage() {
                     </div>
                   ) : (
                     <div className="flex flex-col items-center justify-center w-full h-full text-gray-400">
-                      <span className="text-6xl mb-2">👤</span>
-                      <span className="text-sm">Photo Unavailable</span>
+                      <img src='/Zimchina.webp' className="h-70"/>
+
                     </div>
                   )}
                 </div>
