@@ -30,8 +30,7 @@ export default function RegisterPage() {
     setErrorMessage('');
     
     try {
-      // const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
-      const apiUrl = 'https://starfish-app-8pzk8.ondigitalocean.app';
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://starfish-app-8pzk8.ondigitalocean.app';
       
       const formDataToSend = new FormData();
       formDataToSend.append('title', data.title);
@@ -51,17 +50,37 @@ export default function RegisterPage() {
         body: formDataToSend,
       });
       
+      // Check if response is OK before trying to parse JSON
+      if (!response.ok) {
+        // Try to get error message from response
+        let errorMsg = `Server error: ${response.status}`;
+        try {
+          const errorData = await response.json();
+          errorMsg = errorData.error || errorMsg;
+        } catch (e) {
+          // If response is not JSON, get text
+          try {
+            const text = await response.text();
+            if (text) errorMsg = text;
+          } catch (textError) {
+            // Fallback to status text
+            errorMsg = response.statusText || errorMsg;
+          }
+        }
+        throw new Error(errorMsg);
+      }
+      
+      // Parse JSON only if response is OK
       const result = await response.json();
       console.log('📥 Response:', result);
       
-      if (response.ok && result.success) {
-        setRegNumber(result.data.regNumber || 0);
+      if (result.success) {
+        setRegNumber(result.data?.regNumber || 0);
         
-        // Check if registration number exceeds limit
-        if (result.data.regNumber > MAX_REGISTRATIONS) {
-          setSubmitStatus('waiting');  // Show waiting list message
+        if (result.data?.regNumber > MAX_REGISTRATIONS) {
+          setSubmitStatus('waiting');
         } else {
-          setSubmitStatus('success');  // Show normal success message
+          setSubmitStatus('success');
         }
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
@@ -71,7 +90,15 @@ export default function RegisterPage() {
     } catch (error) {
       console.error('❌ Submission error:', error);
       setSubmitStatus('error');
-      setErrorMessage('Network error. Please check if the backend server is running.');
+      
+      // Better error messages
+      if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
+        setErrorMessage('Cannot connect to server. Please check your internet connection.');
+      } else if (error instanceof Error) {
+        setErrorMessage(error.message || 'Registration failed. Please try again.');
+      } else {
+        setErrorMessage('An unexpected error occurred. Please try again.');
+      }
     }
   };
 
@@ -241,8 +268,8 @@ export default function RegisterPage() {
             </div>
             <p className="text-black text-sm md:text-lg font-bold italic tracking-wide pb-2">Building Strategic Partnerships</p>
             <p className="text-black text-sm md:text-lg font-bold italic tracking-wide pb-2">            
-              Brought to you by <a href="https://www.africapaciti.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Africapaciti</a> & The The Chamber of Chinese Enterprises in Zimbabwe
-</p>
+              Brought to you by <a href="https://www.africapaciti.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Africapaciti</a> & The Chamber of Chinese Enterprises in Zimbabwe
+            </p>
           </div>
 
           <div className="flex flex-col lg:flex-row gap-6 md:gap-8">
@@ -323,7 +350,7 @@ export default function RegisterPage() {
                       <input 
                         type="text" 
                         required
-                        placeholder="e.g. Minister/ Chief Executive Officer"
+                        placeholder="e.g. Minister/Chief Executive Officer"
                         className="w-full px-3 md:px-4 py-2 md:py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition text-black placeholder-gray-400 bg-white text-sm md:text-base"
                         {...register("jobTitle", { required: true })}
                       />
@@ -405,7 +432,7 @@ export default function RegisterPage() {
                 <p className="text-xs md:text-sm">📞 Precious Mpanduki: +263 786 262 716</p>
                 <p className="text-xs md:text-sm break-all">✉️ info@zimchinasymposium.com</p>
 
-                <p className="text-xs md:text-sm text-white/90 mb-2 md:mb-3 mt-9">Business Enquires:</p>
+                <p className="text-xs md:text-sm text-white/90 mb-2 md:mb-3 mt-9">Business Enquiries:</p>
                 <p className="text-xs md:text-sm">📞 Andy Hodges: +263 773 491 634</p>
                 <p className="text-xs md:text-sm break-all">✉️ andy.hodges@africapaciti.com</p>
               </div>
