@@ -240,6 +240,9 @@ export default function RegisterPage() {
               </div>
             </div>
             <p className="text-black text-sm md:text-lg font-bold italic tracking-wide pb-2">Building Strategic Partnerships</p>
+            <p className="text-black text-sm md:text-lg font-bold italic tracking-wide pb-2">            
+              Brought to you by <a href="https://www.africapaciti.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Africapaciti</a> & The The Chamber of Chinese Enterprises in Zimbabwe
+</p>
           </div>
 
           <div className="flex flex-col lg:flex-row gap-6 md:gap-8">
@@ -398,7 +401,11 @@ export default function RegisterPage() {
 
               <div className="backdrop-blur-3xl rounded-2xl shadow-xl p-5 md:p-6 text-white">
                 <h3 className="font-bold text-base md:text-lg mb-2 md:mb-3">Need Assistance?</h3>
-                <p className="text-xs md:text-sm text-white/90 mb-2 md:mb-3">Contact our official delegation desk:</p>
+                <p className="text-xs md:text-sm text-white/90 mb-2 md:mb-3">Contact our Official Delegation Desk:</p>
+                <p className="text-xs md:text-sm">📞 Precious Mpanduki: +263 786 262 716</p>
+                <p className="text-xs md:text-sm break-all">✉️ info@.com</p>
+
+                <p className="text-xs md:text-sm text-white/90 mb-2 md:mb-3 mt-9">Business Enquires:</p>
                 <p className="text-xs md:text-sm">📞 Andy Hodges: +263 773 491 634</p>
                 <p className="text-xs md:text-sm break-all">✉️ andy.hodges@africapaciti.com</p>
               </div>

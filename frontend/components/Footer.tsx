@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
             <div>
               <img src="/Zimchina logo.png" height="260" width="260" className="bg-white rounded-3xl"/>
-              <p className="text-xs md:text-sm text-gray-500 leading-relaxed mt-4">Building Strategic Partnerships</p>
+              <p className="text-xs md:text-sm text-gray-100 leading-relaxed mt-4">Building Strategic Partnerships</p>
             </div>
             <div>
               <h4 className="text-white font-semibold text-sm md:text-base mb-3 md:mb-4">Quick Links</h4>
@@ -19,12 +19,20 @@ export default function Footer() {
                 <li><Link href="/about" className=" hover:text-yellow-300 transition">About</Link></li>
                 <li><Link href="/panelists" className=" hover:text-yellow-300 transition">Panelists</Link></li>
                 <li><Link href="/register" className=" hover:text-yellow-300 transition">Register for the Symposium</Link></li>
-                <li><a href="/schedule" className=" hover:text-yellow-300 transition">Schedule</a></li>
+                <li><Link href="/schedule" className=" hover:text-yellow-300 transition">Schedule</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold text-sm md:text-base mb-3 md:mb-4">Contact</h4>
               <ul className="space-y-1 md:space-y-2 text-xs md:text-sm text-gray-400">
+                <p>Official Delegation Desk:</p>
+                <li className="flex gap-2 break-all">📞 Precious Mpanduki: +263 786 262 716</li>
+                <li className="flex gap-2 break-all">✉️ info@.com</li>
+                <li className="flex gap-2">📍 Harare, Zimbabwe</li>
+              </ul>
+
+              <ul className="space-y-1 mt-5 md:space-y-2 text-xs md:text-sm text-gray-400">
+                <p>Business Enquires:</p>
                 <li className="flex gap-2 break-all">📞 Andy Hodges: +263 773 491 634</li>
                 <li className="flex gap-2 break-all">✉️ andy.hodges@africapaciti.com</li>
                 <li className="flex gap-2">📍 Harare, Zimbabwe</li>

@@ -124,7 +124,7 @@ const getEmailContent = (data) => `
           <strong>📅 Date:</strong> 2 July 2026<br>
           <strong>📍 Venue:</strong> Golden Conifer Conference Centre<br>
           <strong>📍 Address:</strong> 30 Quendon Rd, Harare, Zimbabwe<br>
-          <strong>⏰ Time:</strong> 11:00 - 18:00
+          <strong>⏰ Time:</strong> 08:00 - 19:00
         </div>
       </div>
       

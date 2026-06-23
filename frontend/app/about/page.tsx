@@ -75,10 +75,10 @@ export default function AboutPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">A Strategic Partnership</h2>
               <div className="w-16 h-1 bg-red-600 mb-6"></div>
               <p className="text-gray-700 leading-relaxed mb-4 text-lg">
-                The Zimbabwe-China Investment Symposium 2026 is convened through a strategic partnership between <strong>Africapaciti</strong> and the <strong>Chamber of Chinese Enterprises in Zimbabwe</strong>.
+                The Zimbabwe-China Investment Symposium 2026 is convened through a strategic partnership between <strong>Africapaciti</strong> and the <strong>The Chamber of Chinese Enterprises in Zimbabwe</strong>.
               </p>
               <p className="text-gray-700 leading-relaxed text-lg">
-                Through this collaboration, Africapaciti and the Chamber of Chinese Enterprises in Zimbabwe seek to create a high-impact platform that promotes meaningful engagement, strengthens strategic partnerships, and accelerates investment flows that support Zimbabwe's industrialisation agenda.
+                Through this collaboration, Africapaciti and the The Chamber of Chinese Enterprises in Zimbabwe seek to create a high-impact platform that promotes meaningful engagement, strengthens strategic partnerships, and accelerates investment flows that support Zimbabwe's industrialisation agenda.
               </p>
             </div>
 
@@ -237,13 +237,13 @@ export default function AboutPage() {
             {/* ===== CHAMBER SECTION ===== */}
             <div className="mb-12">
               <div className="flex items-center gap-4 mb-6">
-                <img src="/chamberlogo.webp" alt="The Chamber of Chinese Enterprises in Zimbabwe" className="h-16 md:h-20 w-auto" />
+                <img src="/chamberlogo.webp" alt="The The Chamber of Chinese Enterprises in Zimbabwe" className="h-16 md:h-20 w-auto" />
                 <div className="w-16 h-1 bg-yellow-500"></div>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">The Chamber of Chinese Enterprises in Zimbabwe</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">The The Chamber of Chinese Enterprises in Zimbabwe</h2>
               <div className="bg-gradient-to-br from-red-50 to-gray-50 rounded-2xl p-6 md:p-8 border border-gray-200">
                 <p className="text-gray-700 leading-relaxed mb-4 text-lg">
-                  <strong>The Chamber of Chinese Enterprises in Zimbabwe (CCEZ)</strong> serves as the leading and key platform for fostering business cooperation between Chinese enterprises and Zimbabwean stakeholders. The Chamber plays a pivotal role in promoting bilateral trade, facilitating investment opportunities, strengthening business networks, and supporting dialogue on policies that enhance the ease of doing business. By connecting investors, entrepreneurs, and policymakers, the Chamber contributes significantly to deepening the longstanding economic relationship between Zimbabwe and China.
+                  <strong>The The Chamber of Chinese Enterprises in Zimbabwe (CCEZ)</strong> serves as the leading and key platform for fostering business cooperation between Chinese enterprises and Zimbabwean stakeholders. The Chamber plays a pivotal role in promoting bilateral trade, facilitating investment opportunities, strengthening business networks, and supporting dialogue on policies that enhance the ease of doing business. By connecting investors, entrepreneurs, and policymakers, the Chamber contributes significantly to deepening the longstanding economic relationship between Zimbabwe and China.
                 </p>
                 <div className="grid md:grid-cols-2 gap-4 mt-6">
                   <div className="bg-white p-4 rounded-xl shadow-sm">

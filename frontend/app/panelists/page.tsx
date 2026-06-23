@@ -45,14 +45,14 @@ export default function PanelistsPage() {
     {
       name: "Mr. Benson Xu",
       title: "Chairperson and Managing Director",
-      organization: "Chamber of Chinese Enterprises in Zimbabwe / Dinson Iron and Steel Company (DISCO)",
-      topic: "Welcome Remarks and Introduction of Ambassador",
-      bio: "Mr. Benson Xu is the Chairperson of the Chinese Chamber of Commerce in Zimbabwe and the Managing Director of Dinson Iron and Steel Company (DISCO). He has been instrumental in spearheading major industrial projects, notably the Manhize steel plant, which is a cornerstone of Zimbabwe's industrialization strategy. His academic background includes studies at LS University, and he possesses significant experience in large-scale investment and infrastructure development.",
+      organization: "The Chamber of Chinese Enterprises in Zimbabwe / Dinson Iron and Steel Company (DISCO)",
+      topic: "Welcome Remarks and Introduction of Ambassador of China to Zimbabwe",
+      bio: "Mr. Benson Xu is the Chairperson of The Chamber of Chinese Enterprises in Zimbabwe and the Managing Director of Dinson Iron and Steel Company (DISCO). He has been instrumental in spearheading major industrial projects, notably the Manhize steel plant, which is a cornerstone of Zimbabwe's industrialization strategy. His academic background includes studies at LS University, and he possesses significant experience in large-scale investment and infrastructure development.",
     image:'/bioPics/Benson.jpeg'
     },
     // ===== 5. ANDY HODGES =====
     {
-      name: "Mr. Andrew F. Hodges",
+      name: "Mr. Andy F. Hodges",
       title: "Group Head of Investments and Advisory Services",
       organization: "Africapaciti Investment Group",
       topic: "Moderator: Investment Environment Plenary",
@@ -112,16 +112,16 @@ export default function PanelistsPage() {
       name: "Honourable Advocate Itayi Ndudzo",
       title: "Minister of State for Provincial Affairs and Devolution",
       organization: "Mashonaland East Province",
-      topic: "Provincial Mining Investment Opportunities",
+      topic: "Provincial Development Opportunities",
       bio: "Hon. Advocate Itayi Ndudzo is the Minister of State for Provincial Affairs and Devolution for Mashonaland East Province. As a legal professional and Advocate, he brings a strong legal and administrative perspective to his role in provincial governance and development.",
       image: "/bioPics/Panelists/Minister of State for Provincial Affairs and Devolutionin Mashonaland East Province - Hon Adv I Ndudzo.jpg",
     },
   {
-      name: "Honourable R. Moyo",
+      name: "Honourable Richard Moyo",
       title: "Minister of State for Provincial Affairs and Devolution",
       organization: "Matabeleland North Province",
-      topic: "Provincial Tourism Opportunities",
-      bio: "Hon. R. Moyo serves as the Minister of State for Provincial Affairs and Devolution for Matabeleland North Province. He is a passionate advocate for tourism-led economic growth and works tirelessly to position his province as a prime destination for both domestic and international investment.",
+      topic: "Provincial Investment Opportunities",
+      bio: "Hon. Richard Moyo serves as the Minister of State for Provincial Affairs and Devolution for Matabeleland North Province. He is a passionate advocate for tourism-led economic growth and works tirelessly to position his province as a prime destination for both domestic and international investment.",
    image:'/bioPics/Honourable R. Moyo.jpg'
    },
     {
@@ -136,7 +136,7 @@ export default function PanelistsPage() {
       name: "Honourable Marian Chombo",
       title: "Minister of State for Provincial Affairs and Devolution",
       organization: "Mashonaland West Province",
-      topic: "Provincial Land Management",
+      topic: "Provincial Rural Development",
       bio: "Hon. Marian Chombo is the Minister of State for Provincial Affairs and Devolution for Mashonaland West Province. She is an experienced politician and administrator, overseeing regional development and the implementation of government policies within her province.",
     image:'/bioPics/Honourable Marian Chombo.jpg'
   },
@@ -144,7 +144,7 @@ export default function PanelistsPage() {
       name: "Honourable Advocate Misheck Mugadza",
       title: "Minister of State for Provincial Affairs and Devolution",
       organization: "Manicaland Province",
-      topic: "Provincial Land Management",
+      topic: "Provincial Community Development",
       bio: "Hon. Advocate Misheck Mugadza is the Minister of State for Provincial Affairs and Devolution for Manicaland Province. A legal professional by training, he applies his expertise to provincial administration, focusing on economic planning and community development.",
       image: "/bioPics/Panelists/Minister of state for provincial affairs and devolution for manicaland province - Hon Adv Mugadza.png",
     },
@@ -170,9 +170,9 @@ export default function PanelistsPage() {
     {
       name: "Mr. William Wen",
       title: "Secretary General",
-      organization: "Chamber of Chinese Enterprises in Zimbabwe",
+      organization: "The Chamber of Chinese Enterprises in Zimbabwe",
       topic: "Closing Remarks and Vote of Thanks",
-      bio: "Mr. William Wen is the Secretary General of the Chinese Chamber of Enterprises in Zimbabwe. He holds a Master of Accounting and Financial Analysis from Hong Kong Polytechnic University. He is a key facilitator of business relations, providing financial and strategic support to Chinese enterprises operating in Zimbabwe.",
+      bio: "Mr. William Wen is the Secretary General of The Chamber of Chinese Enterprises in Zimbabwe. He holds a Master of Accounting and Financial Analysis from Hong Kong Polytechnic University. He is a key facilitator of business relations, providing financial and strategic support to Chinese enterprises operating in Zimbabwe.",
     image: '/bioPics/William wen, SG OF CCEZ.jpeg'
     },
     // ===== 10. DEPUTY MINISTERS =====
@@ -292,10 +292,10 @@ export default function PanelistsPage() {
     },
     {
       name: "Ms. Yu Dongping",
-      title: "Chief Executive Officer",
-      organization: "Bikita Minerals",
+      title: "Business Consultant",
+      organization: "The Chamber of Chinese Enterprises in Zimbabwe",
       topic: "Land Management for Investment",
-      bio: "Ms. Yu Dongping is the Chief Executive Officer of Bikita Minerals. As a leading executive in the mining sector, she oversees the operations of one of Zimbabwe's most significant lithium mines, contributing to the country's position in the global green energy supply chain.",
+      bio: "Ms. Yu Dongping is the Business Consultant of The Chamber of Chinese Enterprises in Zimbabwe. As a leading executive in the mining sector, she oversees the operations of one of Zimbabwe's most significant lithium mines, contributing to the country's position in the global green energy supply chain.",
     image:'/bioPics/Ms. Yu dongping.jpeg'
     },
     {
@@ -341,9 +341,9 @@ export default function PanelistsPage() {
     {
       name: "Mr. Zhang Guangyi",
       title: "Vice President",
-      organization: "Chamber of Chinese Enterprises in Zimbabwe",
+      organization: "The Chamber of Chinese Enterprises in Zimbabwe",
       topic: "Investment Environment for Chinese Investors",
-      bio: "Mr. Zhang Guangyi is the Vice President of the Chamber of Chinese Enterprises in Zimbabwe. He is actively involved in facilitating business cooperation and promoting research and educational exchanges between Chinese enterprises and Zimbabwean institutions, contributing to the growth of bilateral economic ties.",
+      bio: "Mr. Zhang Guangyi is the Vice President of the The Chamber of Chinese Enterprises in Zimbabwe. He is actively involved in facilitating business cooperation and promoting research and educational exchanges between Chinese enterprises and Zimbabwean institutions, contributing to the growth of bilateral economic ties.",
     },
     {
       name: "Mr. Zhou Xuegong",
@@ -378,17 +378,17 @@ export default function PanelistsPage() {
     {
       name: "Mr. Shalvar Chikomba",
       title: "Chairperson",
-      organization: "Zimbabwe National Residents Association Organisation (ZNRAO)",
+      organization: "Zimbabwe National Organization of Associations and Residents Trusts (ZNOART)",
       topic: "Residents' Rights and Land Issues",
       bio: "Mr. Shalvar Chikomba is the Chairperson of the Zimbabwe National Residents Association (ZNOART). Educated at Glen Norah High, he is a prominent community leader who advocates for residents' rights, improved service delivery, and sustainable urban development.",
     image:'/bioPics/Mr. Shalvar Chikomba.jpg'
     },
     {
       name: "Ms. Shanel Liu",
-      title: "Vice President and Vice Secretary",
-      organization: "Chamber of Chinese Enterprises in Zimbabwe",
+      title: "Member",
+      organization: "The Chamber of Chinese Enterprises in Zimbabwe",
       topic: "Zero Tariffs: Business Community Perspective",
-      bio: "Ms. Shanel Liu is the Vice President and Vice Secretary of the Chamber of Chinese Enterprises in Zimbabwe. She holds an MBA and has extensive experience in government relations and industrial development. She plays a vital role in bridging the gap between Chinese investors and the Zimbabwean government to foster sustainable economic partnerships.",
+      bio: "Ms. Shanel Liu is the Vice President and Vice Secretary of the The Chamber of Chinese Enterprises in Zimbabwe. She holds an MBA and has extensive experience in government relations and industrial development. She plays a vital role in bridging the gap between Chinese investors and the Zimbabwean government to foster sustainable economic partnerships.",
     },
     // {
     //   name: "Mr. S. Kuvarika",
@@ -495,7 +495,7 @@ export default function PanelistsPage() {
                   
                   <div className="bg-gray-200 rounded-lg p-3 mb-3">
                     <p className="text-sm text-gray-700">
-                      <span className="font-semibold text-red-600">Topic:</span> {panelist.topic}
+                      <span className="font-semibold text-red-600">Topic:</span> <span className="font-bold">{panelist.topic}</span>
                     </p>
                   </div>
                   

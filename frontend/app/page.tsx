@@ -20,7 +20,7 @@ export default function Home() {
   // Schedule summary data
   const scheduleSummary = [
     { time: "08:00 – 09:00", title: "Delegates Arrival & Registration", type: "registration" },
-    { time: "09:00 – 11:10", title: "Session 1: Opening Ceremony", type: "session" },
+    { time: "09:00 – 11:10", title: "Session 1: Opening Ceremony", type: "special" },
     { time: "11:10 – 11:35", title: "Tea Break", type: "break" },
     { time: "11:35 – 12:10", title: "Session 2: Investment Environment Plenary", type: "session" },
     { time: "12:10 – 12:55", title: "Session 3: Zero Tariffs Trade Policy", type: "session" },
@@ -33,7 +33,7 @@ export default function Home() {
     { time: "15:45 – 16:00", title: "Session 9: Land Management Address", type: "session" },
     { time: "16:00 – 16:30", title: "Session 10: Land & Rural Development Plenary", type: "session" },
     { time: "16:30 – 16:45", title: "Session 11: Immigration Policy", type: "session" },
-    { time: "16:45 – 17:10", title: "Session 12: Resolutions & Closing", type: "session" },
+    { time: "16:45 – 17:10", title: "Session 12: Resolutions & Closing", type: "special" },
     { time: "17:10 – 19:00", title: "Networking Cocktail", type: "special" },
     { time: "19:00", title: "Delegates Departure", type: "end" },
   ];
@@ -103,7 +103,7 @@ export default function Home() {
         
         <div className="relative z-10 text-left px-4 md:px-8 lg:px-12 max-w-6xl mx-auto w-full pt-42 md:pt-60 lg:pt-73 pb-16">
           <p className="text-lg lg:text-2xl text-gray-300 mb-3 md:mb-4">
-            Brought to you by <a href="https://www.africapaciti.com" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:underline">Africapaciti</a> & The Chamber of Chinese Enterprises in Zimbabwe
+            Brought to you by <a href="https://www.africapaciti.com" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:underline">Africapaciti</a> & The The Chamber of Chinese Enterprises in Zimbabwe
           </p>
           
           <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 leading-tight">
@@ -177,7 +177,7 @@ export default function Home() {
               <div className="w-16 h-1 bg-yellow-500 mb-4 md:mb-5"></div>
               <h3 className="text-xl md:text-2xl font-semibold text-black mb-2 md:mb-3">Golden Conifer Wedding & Conference Centre</h3>
               <p className="text-gray-600 mb-4 md:mb-5 leading-relaxed text-sm md:text-base">
-                Zimbabwe's premier venue for high-level international summits, equipped with state-of-the-art facilities and translation services.
+                Zimbabwe's premier venue for high-level international summits and equipped with state-of-the-art facilities.
               </p>
               <div className="space-y-2 text-gray-700 text-sm md:text-base">
                 <p className="flex gap-2 items-start">
@@ -273,7 +273,7 @@ export default function Home() {
       </section>
 
       {/* ===== SCHEDULE SUMMARY SECTION ===== */}
-      <section id="schedule" className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-black to-blue-900">
+      <section id="schedule" className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-slate-900 to-blue-900">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-8 md:mb-10">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">Event Schedule Summary</h2>

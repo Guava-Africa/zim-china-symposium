@@ -99,8 +99,8 @@ export default function SchedulePage() {
                   { time: "09:20 – 09:30", text: "Welcome Remarks – <span class='font-bold text-red-700'>Hon. Senator C. Tawengwa</span> (Minister of State for Provincial Affairs and Devolution for Harare Metropolitan Province)" },
                   // { time: "09:30 – 09:40", text: "Opening Remarks – <span class='font-bold text-red-700'>Mrs. Tsungai Muguti</span> (Group Chief Executive Officer, Africapaciti Investment Group)" },
                   { time: "09:30 – 09:40", text: "Opening Remarks – <span class='font-bold text-red-700'>Mrs. T. Muguti</span> (Group Chief Executive Officer, Africapaciti Investment Group)" },
-                  { time: "09:40 – 09:50", text: "Welcome Remarks and Introduction of Ambassador – <span class='font-bold text-red-700'>Mr. Benson Xu</span> (Chairperson, Chamber of Chinese Enterprises in Zimbabwe)" },
-                  // { time: "09:40 – 09:50", text: "Welcome Remarks and Introduction of Ambassador – <span class='font-bold text-red-700'>Mr. B. Xu</span> (Chairperson, Chamber of Chinese Enterprises in Zimbabwe)" },
+                  { time: "09:40 – 09:50", text: "Welcome Remarks and Introduction of Ambassador – <span class='font-bold text-red-700'>Mr. Benson Xu</span> (Chairperson, The Chamber of Chinese Enterprises in Zimbabwe)" },
+                  // { time: "09:40 – 09:50", text: "Welcome Remarks and Introduction of Ambassador – <span class='font-bold text-red-700'>Mr. B. Xu</span> (Chairperson, The Chamber of Chinese Enterprises in Zimbabwe)" },
                   { time: "09:50 – 10:10", text: "Remarks on behalf of the Government of the People's Republic of China – <span class='font-bold text-red-700'>His Excellency Ambassador Zhou</span> (Ambassador of China to Zimbabwe)" },
                   // { time: "10:10 – 10:25", text: "Call for Chinese Participation in Provincial Economies – <span class='font-bold text-red-700'>Hon. Eng. Tafadzwa Muguti</span> (Permanent Secretary for Presidential Affairs and Devolution, Office of the President)" },
                   { time: "10:10 – 10:25", text: "Call for Chinese Participation in Provincial Economies – <span class='font-bold text-red-700'>Hon. Eng. T. Muguti</span> (Permanent Secretary for Presidential Affairs and Devolution, Office of the President)" },
@@ -153,8 +153,8 @@ export default function SchedulePage() {
                       <p className="text-black text-md"><span className="font-bold">Panellists:</span></p>
                       {/* <p className="text-black text-md ml-4">• <span className="font-bold text-blue-700">Hon. D. Kudakwashe Munanganwa</span> (Deputy Minister of Finance, Economic Development and Investment Promotion)</p> */}
                       <p className="text-black text-md ml-4">• <span className="font-bold text-blue-700">Hon. D. Munanganwa</span> (Deputy Minister of Finance, Economic Development and Investment Promotion)</p>
-                      <p className="text-black text-md ml-4">• <span className="font-bold text-blue-700">Mr. Zhang Guangyi</span> (Vice President, Chamber of Chinese Enterprises in Zimbabwe)</p>
-                      {/* <p className="text-black text-md ml-4">• <span className="font-bold text-blue-700">Mr. Z. Guangyi</span> (Vice President, Chamber of Chinese Enterprises in Zimbabwe)</p> */}
+                      <p className="text-black text-md ml-4">• <span className="font-bold text-blue-700">Mr. Zhang Guangyi</span> (Vice President, The Chamber of Chinese Enterprises in Zimbabwe)</p>
+                      {/* <p className="text-black text-md ml-4">• <span className="font-bold text-blue-700">Mr. Z. Guangyi</span> (Vice President, The Chamber of Chinese Enterprises in Zimbabwe)</p> */}
                       {/* <p className="text-black text-md ml-4">• <span className="font-bold text-blue-700">Dr. Innocent Matshe</span> (Deputy Governor, Reserve Bank of Zimbabwe)</p> */}
                       <p className="text-black text-md ml-4">• <span className="font-bold text-blue-700">Dr. I. Matshe</span> (Deputy Governor, Reserve Bank of Zimbabwe)</p>
                       <p className="text-black text-md ml-4">• <span className="font-bold text-blue-700">Mr. T. Chinamano</span> (Chief Executive Officer, Zimbabwe Investment and Development Agency)</p>
@@ -195,7 +195,7 @@ export default function SchedulePage() {
                       <p className="text-black text-md ml-4">• <span className="font-bold text-green-700">Mr. C. Isaya</span> (Chief Executive Officer, Agricultural Marketing Authority)</p>
                       <p className="text-black text-md ml-4">• <span className="font-bold text-green-700">Mr. T. Chimedza</span> (Head of Business Development, Tobacco Industry and Marketing Board)</p>
                       <p className="text-black text-md ml-4">• <span className="font-bold text-green-700">Mr. S. Heri</span> (Chairperson, Horticultural Development Council)</p>
-                      <p className="text-black text-md ml-4">• <span className="font-bold text-green-700">Ms. Shanel Liu</span> (Chamber of Chinese Enterprises in Zimbabwe)</p>
+                      <p className="text-black text-md ml-4">• <span className="font-bold text-green-700">Ms. Shanel Liu</span> (The Chamber of Chinese Enterprises in Zimbabwe)</p>
                       <p className="text-black text-md ml-4">• <span className="font-bold text-green-700">Mr. S. Nyanhongo</span> (Chief Executive Officer, Stanbic Bank Zimbabwe)</p>
                       {/* <p className="text-black text-md ml-4">• <span className="font-bold text-green-700">Mr. Solomon Nyanhongo</span> (Chief Executive Officer, Stanbic Bank Zimbabwe)</p> */}
                     </div>
@@ -359,11 +359,11 @@ export default function SchedulePage() {
                     <div className="mt-3 space-y-2">
                       <p className="text-black text-md"><span className="font-bold">Moderator:</span> <span className="font-bold text-emerald-700">Dr. Ayo Adesola</span> (Resident Representative, United Nations Development Programme)</p>
                       <p className="text-black text-md"><span className="font-bold">Panellists:</span></p>
-                      <p className="text-black text-md ml-4">• <span className="font-bold text-emerald-700">Ms. Yu Dongping</span> (Chief Executive Officer, Bikita Minerals)</p>
+                      <p className="text-black text-md ml-4">• <span className="font-bold text-emerald-700">Ms. Yu Dongping</span> (Business Consultant, The Chamber of Chinese Enterprises in Zimbabwe)</p>
                       <p className="text-black text-md ml-4">• <span className="font-bold text-emerald-700">Hon. M. Chombo</span> (Minister of State for Provincial Affairs and Devolution, Mashonaland West Province)</p>
                       <p className="text-black text-md ml-4">• <span className="font-bold text-emerald-700">Hon. Adv. Mugadza</span> (Minister of State for Provincial Affairs and Devolution, Manicaland Province)</p>
-                      <p className="text-black text-md ml-4">• <span className="font-bold text-emerald-700">Mr. S. Chikomba</span> (Chairperson, Zimbabwe National Residents Association Organisation)</p>
-                      {/* <p className="text-black text-md ml-4">• <span className="font-bold text-emerald-700">Mr. Shalvar Chikomba</span> (Chairperson, Zimbabwe National Residents Association Organisation)</p> */}
+                      <p className="text-black text-md ml-4">• <span className="font-bold text-emerald-700">Mr. S. Chikomba</span> (Chairperson, Zimbabwe National Organization of Associations and Residents Trusts)</p>
+                      {/* <p className="text-black text-md ml-4">• <span className="font-bold text-emerald-700">Mr. Shalvar Chikomba</span> (Chairperson, Zimbabwe National Organization of Associations and Residents Trusts)</p> */}
                       <p className="text-black text-md ml-4">• <span className="font-bold text-emerald-700">Dr. T. Dozwa</span> (Commissioner, Zimbabwe Land Commission)</p>
                       {/* <p className="text-black text-md ml-4">• <span className="font-bold text-emerald-700">Dr. Tsitsi Choruma Dozwa</span> (Commissioner, Zimbabwe Land Commission)</p> */}
                       <p className="text-black text-md ml-4">• <span className="font-bold text-emerald-700">Mr. A. Chigona</span> (Director General, Environmental Management Authority)</p>
@@ -418,8 +418,8 @@ export default function SchedulePage() {
                     <span className="text-md font-bold text-indigo-700">17:00 – 17:10</span>
                   </div>
                   <div className="sm:col-span-3">
-                    <span className="text-black text-md">Closing Remarks and Vote of Thanks – <span className="font-bold text-indigo-700">Mr. W. Wen</span> (Secretary General, Chamber of Chinese Enterprises in Zimbabwe)</span>
-                    {/* <span className="text-black text-md">Closing Remarks and Vote of Thanks – <span className="font-bold text-indigo-700">Mr. William Wen</span> (Secretary General, Chamber of Chinese Enterprises in Zimbabwe)</span> */}
+                    <span className="text-black text-md">Closing Remarks and Vote of Thanks – <span className="font-bold text-indigo-700">Mr. W. Wen</span> (Secretary General, The Chamber of Chinese Enterprises in Zimbabwe)</span>
+                    {/* <span className="text-black text-md">Closing Remarks and Vote of Thanks – <span className="font-bold text-indigo-700">Mr. William Wen</span> (Secretary General, The Chamber of Chinese Enterprises in Zimbabwe)</span> */}
                   </div>
                 </div>
               </div>
@@ -436,7 +436,7 @@ export default function SchedulePage() {
                     <span className="text-md font-bold text-rose-700">17:10 – 19:00</span>
                   </div>
                   <div className="sm:col-span-3">
-                    <span className="text-black text-md">Networking Cocktail and Entertainment – <span className="font-semibold">Hosted by Africapaciti and the Chamber of Chinese Enterprises in Zimbabwe</span></span>
+                    <span className="text-black text-md">Networking Cocktail and Entertainment – <span className="font-semibold">Hosted by Africapaciti and the The Chamber of Chinese Enterprises in Zimbabwe</span></span>
                   </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4 mt-2 pt-2 border-t border-rose-300">
