@@ -27,7 +27,7 @@ export default function Footer() {
               <ul className="space-y-1 md:space-y-2 text-xs md:text-sm text-gray-400">
                 <p>Official Delegation Desk:</p>
                 <li className="flex gap-2 break-all">📞 Precious Mpanduki: +263 786 262 716</li>
-                <li className="flex gap-2 break-all">✉️ info@.com</li>
+                <li className="flex gap-2 break-all">✉️ info@zimchinasymposium.com</li>
                 <li className="flex gap-2">📍 Harare, Zimbabwe</li>
               </ul>
 

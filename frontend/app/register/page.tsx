@@ -403,7 +403,7 @@ export default function RegisterPage() {
                 <h3 className="font-bold text-base md:text-lg mb-2 md:mb-3">Need Assistance?</h3>
                 <p className="text-xs md:text-sm text-white/90 mb-2 md:mb-3">Contact our Official Delegation Desk:</p>
                 <p className="text-xs md:text-sm">📞 Precious Mpanduki: +263 786 262 716</p>
-                <p className="text-xs md:text-sm break-all">✉️ info@.com</p>
+                <p className="text-xs md:text-sm break-all">✉️ info@zimchinasymposium.com</p>
 
                 <p className="text-xs md:text-sm text-white/90 mb-2 md:mb-3 mt-9">Business Enquires:</p>
                 <p className="text-xs md:text-sm">📞 Andy Hodges: +263 773 491 634</p>

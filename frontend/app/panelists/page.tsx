@@ -259,11 +259,11 @@ export default function PanelistsPage() {
    image:"/bioPics/Dr-Tsitsi-Choruma.jpg"
     },
     {
-      name: "Mr. P Magaramombe",
+      name: "Mr. Peter Magaramombe",
       title: "Chief Executive Officer",
       organization: "Fidelity Gold Refinery",
       topic: "Mining Investment Opportunities",
-      // bio: "Mr. Mark Learmonth is the Chief Executive Officer of Caledonia Mining Corporation, the operator of Blanket Mine. He is a graduate of Oxford University and a chartered accountant. He also serves on the Executive Committee of the Chamber of Mines of Zimbabwe, contributing his extensive financial and mining expertise to the industry.",
+      bio: "Mr. Peter Magaramombe is the Chief Executive Officer of Fidelity Gold Refinery, Zimbabwe's sole authorized gold buyer and exporter. He has extensive experience in the mining and financial services sectors, driving gold value chain development and mineral beneficiation. He continues to strengthen the country's gold marketing and production initiatives.",
     image:"/bioPics/Mr. P Magaramombe.jpg"
     },
     {
@@ -319,7 +319,7 @@ export default function PanelistsPage() {
       title: "Chief Executive Officer",
       organization: "Agricultural Marketing Authority (AMA)",
       topic: "Zero Tariffs: Agricultural Perspective",
-      bio: "Mr. Clever Isaya is the Chief Executive Officer of the Agricultural Marketing Authority (AMA). He holds a Master of Business Administration (MBA) from the University of Gloucestershire (UK) and a Bachelor of Commerce Honours Degree in Marketing from the National University of Science and Technology (NUST) in Zimbabwe. He leads AMA's efforts in regulating and facilitating the marketing of agricultural products.",
+      bio: "Mr. Clever Isaya is the Chief Executive Officer of the Agricultural Marketing Authority (AMA). He brings over 18 years of leadership experience across agriculture, telecommunications, and manufacturing, having held senior roles at NetOne, Econet, and Cairns Foods. He holds an MBA from the University of Gloucestershire and a BCom Honours in Marketing from NUST.",
       image: "/bioPics/Panelists/Agricultural Marketing Authority Chief Executive Officer - Mr C Isaya.png",
     },
     {

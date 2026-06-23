@@ -61,7 +61,7 @@ app.use('/uploads', express.static(uploadsDir));
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:3001', 'http://127.0.0.1:3000'],
+  origin: ['http://localhost:3000', 'https://zimchinasymposium.com'],
   credentials: true
 }));
 
@@ -190,7 +190,7 @@ app.post('/api/register', limiter, upload.single('profileImage'), async (req, re
         });
         
         await resend.emails.send({
-          from: 'Zimbabwe-China Symposium <admin@toitsolutions.co.zw>',
+          from: 'Zimbabwe-China Symposium <info@zimchinasymposium.com>',
           to: [email],
           subject: 'Registration Confirmed for Zimbabwe-China Investment Symposium 2026',
           html: emailHtml
