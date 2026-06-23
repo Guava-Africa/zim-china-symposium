@@ -31,7 +31,7 @@ export default function RegisterPage() {
     
     try {
       // const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+      const apiUrl = 'https://starfish-app-8pzk8.ondigitalocean.app';
       
       const formDataToSend = new FormData();
       formDataToSend.append('title', data.title);
