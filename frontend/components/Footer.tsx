@@ -58,7 +58,15 @@ export default function Footer() {
           </div>
           <div className="border-t border-blue-900/50 pt-5 md:pt-6 text-center text-[10px] md:text-xs text-gray-500">
             <div>© {currentYear} Zimbabwe-China Investment Symposium. All rights reserved.</div>
+
+            <div className="flex items-center text-white text-md justify-center mt-2">
+  <span>Powered by</span>
+  <a href="https://guava.africa" target="_blank" rel="noopener noreferrer" className="inline-block">
+    <img src={'/Guava Logo.png'} alt="Guava" className="h-12 w-auto" />
+  </a>
+</div>
           </div>
+          
         </div>
       </footer>
   )
