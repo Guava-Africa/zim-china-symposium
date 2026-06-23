@@ -50,48 +50,48 @@ export default function RegisterPage() {
         body: formDataToSend,
       });
       
-      // Check if response is OK before trying to parse JSON
-      if (!response.ok) {
-        // Try to get error message from response
-        let errorMsg = `Server error: ${response.status}`;
-        try {
-          const errorData = await response.json();
-          errorMsg = errorData.error || errorMsg;
-        } catch (e) {
-          // If response is not JSON, get text
-          try {
-            const text = await response.text();
-            if (text) errorMsg = text;
-          } catch (textError) {
-            // Fallback to status text
-            errorMsg = response.statusText || errorMsg;
-          }
-        }
-        throw new Error(errorMsg);
-      }
+      console.log('📥 Response status:', response.status);
       
-      // Parse JSON only if response is OK
-      const result = await response.json();
-      console.log('📥 Response:', result);
-      
-      if (result.success) {
-        setRegNumber(result.data?.regNumber || 0);
+      // 201 is a success status (Created)
+      if (response.status === 201 || response.ok) {
+        const result = await response.json();
+        console.log('📥 Response data:', result);
         
-        if (result.data?.regNumber > MAX_REGISTRATIONS) {
-          setSubmitStatus('waiting');
-        } else {
-          setSubmitStatus('success');
+        if (result.success) {
+          setRegNumber(result.data?.regNumber || 0);
+          
+          if (result.data?.regNumber > MAX_REGISTRATIONS) {
+            setSubmitStatus('waiting');
+          } else {
+            setSubmitStatus('success');
+          }
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
         }
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else {
-        setSubmitStatus('error');
-        setErrorMessage(result.error || 'Registration failed. Please try again.');
       }
+      
+      // If we get here, something went wrong
+      let errorMsg = 'Registration failed. Please try again.';
+      try {
+        const errorData = await response.json();
+        errorMsg = errorData.error || errorMsg;
+      } catch (e) {
+        // If response is not JSON
+        try {
+          const text = await response.text();
+          if (text) errorMsg = text;
+        } catch (textError) {
+          errorMsg = response.statusText || errorMsg;
+        }
+      }
+      
+      setSubmitStatus('error');
+      setErrorMessage(errorMsg);
+      
     } catch (error) {
       console.error('❌ Submission error:', error);
       setSubmitStatus('error');
       
-      // Better error messages
       if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
         setErrorMessage('Cannot connect to server. Please check your internet connection.');
       } else if (error instanceof Error) {
@@ -185,8 +185,8 @@ export default function RegisterPage() {
               </div>
             </div>
             
+            <div className="text-6xl mb-4">✅</div>
             <h1 className="text-2xl md:text-3xl font-bold text-black mb-3">Registration Successful!</h1>
-            
             <p className="text-gray-700 mb-4 md:mb-6 text-sm md:text-base">
               Thank you for registering for the Zimbabwe-China Investment Symposium.
             </p>
