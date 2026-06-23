@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import Spinner from "@/components/Spinner";
+import axios from 'axios';
 
 type FormData = {
   fullName: string;
@@ -32,6 +33,8 @@ export default function RegisterPage() {
     try {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://starfish-app-8pzk8.ondigitalocean.app';
       
+      console.log('🚀 API URL:', apiUrl);
+      
       const formDataToSend = new FormData();
       formDataToSend.append('title', data.title);
       formDataToSend.append('fullName', data.fullName);
@@ -45,48 +48,55 @@ export default function RegisterPage() {
         formDataToSend.append('profileImage', selectedFile);
       }
       
+      // Log FormData contents
+      console.log('📦 Sending:');
+      for (let pair of formDataToSend.entries()) {
+        console.log(`   ${pair[0]}: ${pair[1]}`);
+      }
+      
+      // Use fetch with better error handling
       const response = await fetch(`${apiUrl}/api/register`, {
         method: 'POST',
         body: formDataToSend,
       });
       
       console.log('📥 Response status:', response.status);
+      console.log('📥 Response status text:', response.statusText);
       
-      // 201 is a success status (Created)
-      if (response.status === 201 || response.ok) {
-        const result = await response.json();
-        console.log('📥 Response data:', result);
-        
-        if (result.success) {
-          setRegNumber(result.data?.regNumber || 0);
-          
-          if (result.data?.regNumber > MAX_REGISTRATIONS) {
-            setSubmitStatus('waiting');
-          } else {
-            setSubmitStatus('success');
-          }
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-          return;
-        }
-      }
+      // First, try to get the response as text
+      const responseText = await response.text();
+      console.log('📥 Raw response:', responseText);
       
-      // If we get here, something went wrong
-      let errorMsg = 'Registration failed. Please try again.';
+      // Try to parse as JSON
+      let result;
       try {
-        const errorData = await response.json();
-        errorMsg = errorData.error || errorMsg;
+        result = JSON.parse(responseText);
       } catch (e) {
-        // If response is not JSON
-        try {
-          const text = await response.text();
-          if (text) errorMsg = text;
-        } catch (textError) {
-          errorMsg = response.statusText || errorMsg;
-        }
+        console.error('❌ Failed to parse JSON:', e);
+        throw new Error('Invalid response from server');
       }
       
-      setSubmitStatus('error');
+      console.log('📥 Parsed response:', result);
+      
+      // Check if registration was successful
+      if (response.ok && result.success) {
+        setRegNumber(result.data?.regNumber || 0);
+        
+        if (result.data?.regNumber > MAX_REGISTRATIONS) {
+          setSubmitStatus('waiting');
+        } else {
+          setSubmitStatus('success');
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+      
+      // If we get here, there was an error
+      // Show the error message from the backend
+      const errorMsg = result.error || result.message || 'Registration failed. Please try again.';
+      console.error('❌ Backend error:', errorMsg);
       setErrorMessage(errorMsg);
+      setSubmitStatus('error');
       
     } catch (error) {
       console.error('❌ Submission error:', error);
@@ -171,7 +181,7 @@ export default function RegisterPage() {
     { value: "Other", flag: "https://flagcdn.com/un.svg", code: "🌍" },
   ];
 
-  // Success Screen (regNumber <= 200)
+  // Success Screen
   if (submitStatus === 'success') {
     return (
       <main className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 overflow-y-auto">
@@ -202,7 +212,7 @@ export default function RegisterPage() {
     );
   }
 
-  // Waiting List Screen (regNumber > 200)
+  // Waiting List Screen
   if (submitStatus === 'waiting') {
     return (
       <main className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 overflow-y-auto">
@@ -388,7 +398,7 @@ export default function RegisterPage() {
                     </div>
                   </div>
 
-                  {/* Error Message */}
+                  {/* Error Message - Shows backend error messages */}
                   {submitStatus === 'error' && (
                     <div className="p-4 bg-red-500/20 backdrop-blur-sm border border-red-500 rounded-xl text-black">
                       <p className="font-semibold">❌ Registration Failed</p>
