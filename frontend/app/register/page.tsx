@@ -31,7 +31,7 @@ export default function RegisterPage() {
     setErrorMessage('');
     
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://starfish-app-8pzk8.ondigitalocean.app';
+      const apiUrl = 'https://starfish-app-8pzk8.ondigitalocean.app';
       
       console.log('🚀 API URL:', apiUrl);
       
@@ -91,12 +91,17 @@ export default function RegisterPage() {
         return;
       }
       
-      // If we get here, there was an error
+      // ✅ Handle 409 specifically - this is NOT an error, it's business logic
+    if (response.status === 409) {
       // Show the error message from the backend
-      const errorMsg = result.error || result.message || 'Registration failed. Please try again.';
-      console.error('❌ Backend error:', errorMsg);
-      setErrorMessage(errorMsg);
+      setErrorMessage(result.error || 'Registration failed.');
       setSubmitStatus('error');
+      return;
+    }
+    
+    // ✅ Handle other non-200 responses
+    setErrorMessage(result.error || 'Registration failed. Please try again.');
+    setSubmitStatus('error');
       
     } catch (error) {
       console.error('❌ Submission error:', error);

@@ -354,8 +354,8 @@ export default function PanelistsPage() {
     },
     {
       name: "Mr. Gong Xuedong",
-      title: "Chairman and Managing Director",
-      organization: "Lithium Producer Association / Bikita Minerals",
+      title: "Chief Executive Officer",
+      organization: "Bikita Minerals",
       topic: "Lithium Mining and Beneficiation",
       bio: "Mr. Gong Xuedong is the Chairman of the Lithium Producer Association and the Managing Director of Bikita Minerals. He is a pivotal figure in Zimbabwe's lithium industry, advocating for value addition, sustainable mining practices, and the strategic development of the country's mineral wealth.",
     image:'/bioPics/MR.GONG XUEDONG CEO OF BIKITA.jpeg'
