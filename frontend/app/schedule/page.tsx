@@ -436,7 +436,7 @@ export default function SchedulePage() {
                     <span className="text-md font-bold text-rose-700">17:10 – 19:00</span>
                   </div>
                   <div className="sm:col-span-3">
-                    <span className="text-black text-md">Networking Cocktail and Entertainment – <span className="font-semibold">Hosted by Africapaciti and the The Chamber of Chinese Enterprises in Zimbabwe</span></span>
+                    <span className="text-black text-md">Networking Cocktail and Entertainment – <span className="font-semibold">Hosted by Africapaciti and The Chamber of Chinese Enterprises in Zimbabwe</span></span>
                   </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4 mt-2 pt-2 border-t border-rose-300">

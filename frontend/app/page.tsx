@@ -103,7 +103,7 @@ export default function Home() {
         
         <div className="relative z-10 text-left px-4 md:px-8 lg:px-12 max-w-6xl mx-auto w-full pt-42 md:pt-60 lg:pt-73 pb-16">
           <p className="text-lg lg:text-2xl text-gray-300 mb-3 md:mb-4">
-            Brought to you by <a href="https://www.africapaciti.com" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:underline">Africapaciti</a> & The The Chamber of Chinese Enterprises in Zimbabwe
+            Brought to you by <a href="https://www.africapaciti.com" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:underline">Africapaciti</a> & The Chamber of Chinese Enterprises in Zimbabwe
           </p>
           
           <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 leading-tight">

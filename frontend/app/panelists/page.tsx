@@ -343,7 +343,7 @@ export default function PanelistsPage() {
       title: "Vice President",
       organization: "The Chamber of Chinese Enterprises in Zimbabwe",
       topic: "Investment Environment for Chinese Investors",
-      bio: "Mr. Zhang Guangyi is the Vice President of the The Chamber of Chinese Enterprises in Zimbabwe. He is actively involved in facilitating business cooperation and promoting research and educational exchanges between Chinese enterprises and Zimbabwean institutions, contributing to the growth of bilateral economic ties.",
+      bio: "Mr. Zhang Guangyi is the Vice President of The Chamber of Chinese Enterprises in Zimbabwe. He is actively involved in facilitating business cooperation and promoting research and educational exchanges between Chinese enterprises and Zimbabwean institutions, contributing to the growth of bilateral economic ties.",
     },
     {
       name: "Mr. Zhou Xuegong",
@@ -388,7 +388,7 @@ export default function PanelistsPage() {
       title: "Member",
       organization: "The Chamber of Chinese Enterprises in Zimbabwe",
       topic: "Zero Tariffs: Business Community Perspective",
-      bio: "Ms. Shanel Liu is the Vice President and Vice Secretary of the The Chamber of Chinese Enterprises in Zimbabwe. She holds an MBA and has extensive experience in government relations and industrial development. She plays a vital role in bridging the gap between Chinese investors and the Zimbabwean government to foster sustainable economic partnerships.",
+      bio: "Ms. Shanel Liu is the Vice President and Vice Secretary of The Chamber of Chinese Enterprises in Zimbabwe. She holds an MBA and has extensive experience in government relations and industrial development. She plays a vital role in bridging the gap between Chinese investors and the Zimbabwean government to foster sustainable economic partnerships.",
     },
     // {
     //   name: "Mr. S. Kuvarika",
