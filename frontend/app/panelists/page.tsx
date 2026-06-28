@@ -344,13 +344,15 @@ export default function PanelistsPage() {
       organization: "The Chamber of Chinese Enterprises in Zimbabwe",
       topic: "Investment Environment for Chinese Investors",
       bio: "Mr. Zhang Guangyi is the Vice President of The Chamber of Chinese Enterprises in Zimbabwe. He is actively involved in facilitating business cooperation and promoting research and educational exchanges between Chinese enterprises and Zimbabwean institutions, contributing to the growth of bilateral economic ties.",
+      image:"/bioPics/Zhang guangyi.jpeg"
     },
     {
-      name: "Mr. Zhou Xuegong",
-      title: "Chief Executive Officer",
-      organization: "Jinnan Group",
+      name: "Mr. Rain. X. He",
+      title: "Investor Representive",
+      organization: "Chenxi Investments",
       topic: "Mining Investment Opportunities",
-      bio: "Mr. Zhou Xuegong is the Chief Executive Officer of Jinnan Group. He is a prominent executive in the mining and industrial sectors, overseeing significant Chinese investments and operations that contribute to Zimbabwe's mineral production and industrial base.",
+      bio: "Mr. Rain X. He is the Investor Representative for Chenxi Investments. He is a prominent figure in cross-border investment and mineral resource development, overseeing strategic investment initiatives that connect Chinese capital with high-potential mining projects in Zimbabwe. He plays a key role in facilitating sustainable partnerships that contribute to the growth of Zimbabwe's mining sector and the broader economic development of the country.",
+      image:"/bioPics/Rain. X. He.jpeg"
     },
     {
       name: "Mr. Gong Xuedong",
