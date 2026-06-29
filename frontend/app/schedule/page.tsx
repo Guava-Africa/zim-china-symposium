@@ -152,12 +152,12 @@ export default function SchedulePage() {
                       <p className="text-black text-md"><span className="font-bold">Focus Areas:</span> Investment Incentives • Tax Rebates • Special Economic Zones • Access to Finance • Anti-Money Laundering Laws • Currency Stability • Dividends Repatriation</p>
                       <p className="text-black text-md"><span className="font-bold">Panellists:</span></p>
                       {/* <p className="text-black text-md ml-4">• <span className="font-bold text-blue-700">Hon. D. Kudakwashe Munanganwa</span> (Deputy Minister of Finance, Economic Development and Investment Promotion)</p> */}
-                      <p className="text-black text-md ml-4">• <span className="font-bold text-blue-700">Hon. D. Munanganwa</span> (Deputy Minister of Finance, Economic Development and Investment Promotion)</p>
+                      <p className="text-black text-md ml-4">• <span className="font-bold text-blue-700">Hon. D. Mnangagwa</span> (Deputy Minister of Finance, Economic Development and Investment Promotion)</p>
                       <p className="text-black text-md ml-4">• <span className="font-bold text-blue-700">Mr. Zhang Guangyi</span> (Vice President, The Chamber of Chinese Enterprises in Zimbabwe)</p>
                       {/* <p className="text-black text-md ml-4">• <span className="font-bold text-blue-700">Mr. Z. Guangyi</span> (Vice President, The Chamber of Chinese Enterprises in Zimbabwe)</p> */}
                       {/* <p className="text-black text-md ml-4">• <span className="font-bold text-blue-700">Dr. Innocent Matshe</span> (Deputy Governor, Reserve Bank of Zimbabwe)</p> */}
                       <p className="text-black text-md ml-4">• <span className="font-bold text-blue-700">Dr. I. Matshe</span> (Deputy Governor, Reserve Bank of Zimbabwe)</p>
-                      <p className="text-black text-md ml-4">• <span className="font-bold text-blue-700">Mr. T. Chinamano</span> (Chief Executive Officer, Zimbabwe Investment and Development Agency)</p>
+                      <p className="text-black text-md ml-4">• <span className="font-bold text-blue-700">Mr. T. Chinamo</span> (Chief Executive Officer, Zimbabwe Investment and Development Agency)</p>
                       {/* <p className="text-black text-md ml-4">• <span className="font-bold text-blue-700">Mr. Oliver Chiperesa</span> (Director General, Financial Intelligence Unit)</p> */}
                       <p className="text-black text-md ml-4">• <span className="font-bold text-blue-700">Mr. O. Chiperesa</span> (Director General, Financial Intelligence Unit)</p>
                       {/* <p className="text-black text-md ml-4">• <span className="font-bold text-blue-700">Ms. Regina Chinamasa</span> (Commissioner General, Zimbabwe Revenue Authority)</p> */}
