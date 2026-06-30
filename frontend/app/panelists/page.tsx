@@ -69,11 +69,11 @@ export default function PanelistsPage() {
       image: "/bioPics/Speakers/Minister of State for provincial Affairs and Devolution Hon Sen C.Z. Tawengwa.png",
     },
     {
-      name: "Honourable Polite Kambamura",
+      name: "Honourable Dr. Eng. Polite Kambamura",
       title: "Minister of Mines and Mining Development",
       organization: "Government of Zimbabwe",
       topic: "Zimbabwe's Mining and Mining Development Strategy (NDS2)",
-      bio: "Hon. Polite Kambamura is the Minister of Mines and Mining Development. A mining engineer by profession, he brings technical expertise to the ministry, focusing on the growth of the mining sector, mineral beneficiation, and the implementation of the National Development Strategy 2 (NDS2) in the mining industry.",
+      bio: "Hon. Dr. Eng. Polite Kambamura is the Minister of Mines and Mining Development. A mining engineer by profession, he brings technical expertise to the ministry, focusing on the growth of the mining sector, mineral beneficiation, and the implementation of the National Development Strategy 2 (NDS2) in the mining industry.",
       image: "/bioPics/Speakers/Minister of Mines and Mining Development - Hon I Kambamura.png",
     },
     {

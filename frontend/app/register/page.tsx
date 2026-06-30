@@ -142,7 +142,7 @@ export default function RegisterPage() {
 
   // Title options
   const titleOptions = [
-    "Mr.", "Mrs.", "Ms.", "Dr.", "Prof.", "Hon.", "Eng.", "Rev.", "Amb.", "Chief", "Sir", "Madam"
+    "Mr.", "Mrs.", "Ms.", "Dr.", "Prof.", "Hon.", "Eng.", "Rev.", "Amb.", "Sir", "Madam"
   ];
 
   // Nationality options

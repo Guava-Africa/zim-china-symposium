@@ -246,7 +246,7 @@ export default function SchedulePage() {
                     <span className="text-md font-bold text-amber-700">14:00 – 14:20</span>
                   </div>
                   <div className="sm:col-span-3">
-                    <span className="text-black text-md">Zimbabwe Government's Mining and Mining Development Strategy as Defined in the National Development Strategy 2 – <span className="font-bold text-amber-700">Hon. I. Kambamura</span> (Minister of Mines and Mining Development)</span>
+                    <span className="text-black text-md">Zimbabwe Government's Mining and Mining Development Strategy as Defined in the National Development Strategy 2 – <span className="font-bold text-amber-700">Hon. Dr. Eng. P. Kambamura</span> (Minister of Mines and Mining Development)</span>
                   </div>
                 </div>
               </div>
