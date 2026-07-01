@@ -101,7 +101,7 @@ export default function Home() {
         
         <div className="absolute inset-0 bg-black/70"></div>
         
-        <div className="relative z-10 text-left px-4 md:px-8 lg:px-12 max-w-6xl mx-auto w-full pt-42 md:pt-60 lg:pt-73 pb-16">
+        <div className="relative z-10 text-left px-4 md:px-8 lg:px-12 max-w-6xl mx-auto w-full pt-60 md:pt-60 lg:pt-73 pb-16">
           <p className="text-lg lg:text-2xl text-gray-300 mb-3 md:mb-4">
             Brought to you by <a href="https://www.africapaciti.com" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:underline">Africapaciti</a> & The Chamber of Chinese Enterprises in Zimbabwe
           </p>

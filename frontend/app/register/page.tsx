@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import Spinner from "@/components/Spinner";
-import axios from 'axios';
 
 type FormData = {
   fullName: string;
@@ -20,11 +19,12 @@ type FormData = {
 export default function RegisterPage() {
   const { register, handleSubmit, formState: { isSubmitting } } = useForm<FormData>();
   const [imagePreview, setImagePreview] = useState<string | null>(null);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'waiting' | 'error'>('idle');
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'waiting' | 'error' | 'closed'>('idle');
   const [regNumber, setRegNumber] = useState<number>(0);
   const [errorMessage, setErrorMessage] = useState<string>('');
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const MAX_REGISTRATIONS = 200;
+  const IS_CLOSED = true; // Set to true when registrations are closed
 
   const onSubmit = async (data: FormData) => {
     setSubmitStatus('idle');
@@ -32,8 +32,6 @@ export default function RegisterPage() {
     
     try {
       const apiUrl = 'https://starfish-app-8pzk8.ondigitalocean.app';
-      
-      console.log('🚀 API URL:', apiUrl);
       
       const formDataToSend = new FormData();
       formDataToSend.append('title', data.title);
@@ -48,26 +46,12 @@ export default function RegisterPage() {
         formDataToSend.append('profileImage', selectedFile);
       }
       
-      // Log FormData contents
-      console.log('📦 Sending:');
-      for (let pair of formDataToSend.entries()) {
-        console.log(`   ${pair[0]}: ${pair[1]}`);
-      }
-      
-      // Use fetch with better error handling
       const response = await fetch(`${apiUrl}/api/register`, {
         method: 'POST',
         body: formDataToSend,
       });
       
-      console.log('📥 Response status:', response.status);
-      console.log('📥 Response status text:', response.statusText);
-      
-      // First, try to get the response as text
       const responseText = await response.text();
-      console.log('📥 Raw response:', responseText);
-      
-      // Try to parse as JSON
       let result;
       try {
         result = JSON.parse(responseText);
@@ -76,9 +60,6 @@ export default function RegisterPage() {
         throw new Error('Invalid response from server');
       }
       
-      console.log('📥 Parsed response:', result);
-      
-      // Check if registration was successful
       if (response.ok && result.success) {
         setRegNumber(result.data?.regNumber || 0);
         
@@ -91,17 +72,14 @@ export default function RegisterPage() {
         return;
       }
       
-      // ✅ Handle 409 specifically - this is NOT an error, it's business logic
-    if (response.status === 409) {
-      // Show the error message from the backend
-      setErrorMessage(result.error || 'Registration failed.');
+      if (response.status === 409) {
+        setErrorMessage(result.error || 'Registration failed.');
+        setSubmitStatus('error');
+        return;
+      }
+      
+      setErrorMessage(result.error || 'Registration failed. Please try again.');
       setSubmitStatus('error');
-      return;
-    }
-    
-    // ✅ Handle other non-200 responses
-    setErrorMessage(result.error || 'Registration failed. Please try again.');
-    setSubmitStatus('error');
       
     } catch (error) {
       console.error('❌ Submission error:', error);
@@ -240,6 +218,58 @@ export default function RegisterPage() {
             <Link href="/" className="inline-block bg-black text-white px-5 md:px-6 py-2 rounded-full hover:bg-gray-800 transition text-sm md:text-base">
               ← Back to Home
             </Link>
+          </div>
+        </div>
+      </main>
+    );
+  }
+
+  // Registration Closed Screen - with Full Background
+  if (submitStatus === 'closed' || IS_CLOSED) {
+    return (
+      <main className="min-h-screen relative flex items-center justify-center">
+        {/* Full Background Image */}
+        <div className="fixed inset-0 z-0">
+          <img 
+            src="/bothflags.webp"
+            alt="Zimbabwe and China Flags"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/20"></div>
+        </div>
+
+        {/* Content - Centered */}
+        <div className="relative z-10 container mx-auto px-4 max-w-3xl">
+          <div className="bg-white/70 backdrop-blur-xl rounded-2xl shadow-2xl p-8 md:p-12">
+            <div className="text-center">
+              {/* Logos */}
+              <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 mb-6">
+                <img src="/Zimchina.webp" alt="Zimbabwe-China Symposium" className="h-20 w-auto md:h-35" />
+                <img src="/africapaciti.webp" alt="Africapaciti" className="h-20 w-auto md:h-35" />
+                <img src="/chamberlogo.webp" alt="Chamber of Chinese Enterprises" className="h-20 w-auto md:h-35" />
+              </div>
+              
+              {/* <div className="text-6xl mb-4">📢</div> */}
+              <h1 className="text-3xl md:text-4xl font-bold text-black mb-4">Registration is Now Closed</h1>
+              
+              <div className="bg-red-50/80 border border-red-500 rounded-xl p-6 mb-6">
+                <p className="text-black text-xl font-semibold">Thank You for Your Interest!</p>
+                <p className="text-gray-700 text-base mt-3">
+                  The Zimbabwe-China Investment Symposium has reached its <strong>maximum capacity</strong>.
+                </p>
+                <p className="text-gray-700 text-base mt-2">
+                  We are grateful for the overwhelming response and interest in this event.
+                </p>
+              </div>
+              
+              <p className="text-gray-600 text-md md:text-base mb-6">
+                We hope to see you at our future events.
+              </p>
+              
+              <Link href="/" className="inline-block bg-black text-white px-6 md:px-8 py-2.5 rounded-full hover:bg-gray-800 transition text-sm md:text-base">
+                ← Back to Home
+              </Link>
+            </div>
           </div>
         </div>
       </main>
@@ -403,7 +433,7 @@ export default function RegisterPage() {
                     </div>
                   </div>
 
-                  {/* Error Message - Shows backend error messages */}
+                  {/* Error Message */}
                   {submitStatus === 'error' && (
                     <div className="p-4 bg-red-500/20 backdrop-blur-sm border border-red-500 rounded-xl text-black">
                       <p className="font-semibold">❌ Registration Failed</p>

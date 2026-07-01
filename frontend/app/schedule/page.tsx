@@ -64,7 +64,7 @@ export default function SchedulePage() {
               <div className="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg">
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4">
                   <div className="sm:col-span-1">
-                    <span className="text-md font-bold text-black">08:00 – 09:00</span>
+                    <span className="text-md font-bold text-black">08:00 – 08:15</span>
                   </div>
                   <div className="sm:col-span-3">
                     <span className="text-black font-semibold text-md">DELEGATES ARRIVAL AND REGISTRATION</span>
@@ -75,7 +75,7 @@ export default function SchedulePage() {
               <div className="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg mt-2">
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4">
                   <div className="sm:col-span-1">
-                    <span className="text-md font-bold text-black">08:45 – 09:00</span>
+                    <span className="text-md font-bold text-black">08:15 – 08:30</span>
                   </div>
                   <div className="sm:col-span-3">
                     <span className="text-black font-semibold text-md">BRIEFING OF GUEST OF HONOUR</span>
@@ -91,22 +91,22 @@ export default function SchedulePage() {
               </div>
               <div className="bg-red-50 border border-red-200 rounded-b-lg p-4 space-y-3">
                 {[
-                  { time: "09:00 – 09:05", text: "Opening Prayer" },
-                  { time: "09:05 – 09:10", text: "National Anthems of Zimbabwe and The People's Republic of China (两国)" },
-                  { time: "09:10 – 09:15", text: "Kuwomberwa Kwemadzishe / Greeting the Chiefs" },
-                  { time: "09:15 – 09:20", text: "Welcome Video - Zimbabwe – China Investment Symposium" },
+                  { time: "08:30 – 08:35", text: "Opening Prayer" },
+                  { time: "08:35 – 08:40", text: "National Anthems of Zimbabwe and The People's Republic of China (两国)" },
+                  { time: "08:40 – 08:45", text: "Kuwomberwa Kwemadzishe / Greeting the Chiefs" },
+                  { time: "08:45 – 08:50", text: "Welcome Video - Zimbabwe – China Investment Symposium" },
                   // { time: "09:20 – 09:30", text: "Welcome Remarks – <span class='font-bold text-red-700'>Hon. Senator Charles Zvidzayi Tawengwa</span> (Minister of State for Provincial Affairs and Devolution for Harare Metropolitan Province)" },
-                  { time: "09:20 – 09:30", text: "Welcome Remarks – <span class='font-bold text-red-700'>Hon. Senator C. Tawengwa</span> (Minister of State for Provincial Affairs and Devolution for Harare Metropolitan Province)" },
+                  { time: "08:50 – 09:00", text: "Welcome Remarks – <span class='font-bold text-red-700'>Hon. Senator C. Tawengwa</span> (Minister of State for Provincial Affairs and Devolution for Harare Metropolitan Province)" },
                   // { time: "09:30 – 09:40", text: "Opening Remarks – <span class='font-bold text-red-700'>Mrs. Tsungai Muguti</span> (Group Chief Executive Officer, Africapaciti Investment Group)" },
-                  { time: "09:30 – 09:40", text: "Opening Remarks – <span class='font-bold text-red-700'>Mrs. T. Muguti</span> (Group Chief Executive Officer, Africapaciti Investment Group)" },
-                  { time: "09:40 – 09:50", text: "Welcome Remarks and Introduction of Ambassador – <span class='font-bold text-red-700'>Mr. Benson Xu</span> (Chairperson, The Chamber of Chinese Enterprises in Zimbabwe)" },
+                  { time: "09:00 – 09:10", text: "Opening Remarks – <span class='font-bold text-red-700'>Mrs. T. Muguti</span> (Group Chief Executive Officer, Africapaciti Investment Group)" },
+                  { time: "09:10 – 09:20", text: "Welcome Remarks and Introduction of Ambassador – <span class='font-bold text-red-700'>Mr. Benson Xu</span> (Chairperson, The Chamber of Chinese Enterprises in Zimbabwe)" },
                   // { time: "09:40 – 09:50", text: "Welcome Remarks and Introduction of Ambassador – <span class='font-bold text-red-700'>Mr. B. Xu</span> (Chairperson, The Chamber of Chinese Enterprises in Zimbabwe)" },
-                  { time: "09:50 – 10:10", text: "Remarks on behalf of the Government of the People's Republic of China – <span class='font-bold text-red-700'>His Excellency Ambassador Zhou</span> (Ambassador of China to Zimbabwe)" },
+                  { time: "09:20 – 09:30", text: "Remarks on behalf of the Government of the People's Republic of China – <span class='font-bold text-red-700'>His Excellency Ambassador Zhou</span> (Ambassador of China to Zimbabwe)" },
                   // { time: "10:10 – 10:25", text: "Call for Chinese Participation in Provincial Economies – <span class='font-bold text-red-700'>Hon. Eng. Tafadzwa Muguti</span> (Permanent Secretary for Presidential Affairs and Devolution, Office of the President)" },
-                  { time: "10:10 – 10:25", text: "Call for Chinese Participation in Provincial Economies – <span class='font-bold text-red-700'>Hon. Eng. T. Muguti</span> (Permanent Secretary for Presidential Affairs and Devolution, Office of the President)" },
-                  { time: "10:25 – 10:40", text: "Aligning Chinese Investments with NDS2 and Introduction of Guest of Honour – <span class='font-bold text-red-700'>Hon. Dr. W. Manungo</span> (Deputy Chief Secretary, Office of the President and Cabinet)" },
+                  { time: "09:30 – 09:40", text: "Call for Chinese Participation in Provincial Economies – <span class='font-bold text-red-700'>Hon. Eng. T. Muguti</span> (Permanent Secretary for Presidential Affairs and Devolution, Office of the President)" },
+                  { time: "09:40 – 09:50", text: "Aligning Chinese Investments with NDS2 and Introduction of Guest of Honour – <span class='font-bold text-red-700'>Hon. Dr. W. Manungo</span> (Deputy Chief Secretary, Office of the President and Cabinet)" },
                   // { time: "10:40 – 11:10", text: "Keynote Address – <span class='font-bold text-red-700'>Hon. July Moyo</span> (Minister of Energy and Power Development)" },
-                  { time: "10:40 – 11:10", text: "Keynote Address – <span class='font-bold text-red-700'>Hon. J. Moyo</span> (Minister of Energy and Power Development)" },
+                  { time: "09:50 – 10:10", text: "Keynote Address – <span class='font-bold text-red-700'>Hon. J. Moyo</span> (Minister of Energy and Power Development)" },
                 ].map((item, idx) => (
                   <div key={idx} className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4 py-1 border-b border-red-200 last:border-0">
                     <div className="sm:col-span-1">
@@ -125,7 +125,7 @@ export default function SchedulePage() {
               <div className="bg-white border border-gray-200 p-4 rounded-lg">
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4">
                   <div className="sm:col-span-1">
-                    <span className="text-md font-bold text-black">11:10 – 11:35</span>
+                    <span className="text-md font-bold text-black">10:10 – 10:30</span>
                   </div>
                   <div className="sm:col-span-3">
                     <span className="text-black font-semibold text-md">TEA BREAK</span>
@@ -142,7 +142,7 @@ export default function SchedulePage() {
               <div className="bg-blue-50 border border-blue-200 rounded-b-lg p-4">
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4">
                   <div className="sm:col-span-1">
-                    <span className="text-md font-bold text-blue-700">11:35 – 12:10</span>
+                    <span className="text-md font-bold text-blue-700">10:30 – 11:10</span>
                   </div>
                   <div className="sm:col-span-3">
                     <p className="text-black font-bold text-lg">Creating and Maintaining an Attractive Investment Environment for Chinese Investors in Zimbabwe</p>
@@ -176,7 +176,7 @@ export default function SchedulePage() {
               <div className="bg-green-50 border border-green-200 rounded-b-lg p-4 space-y-3">
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4">
                   <div className="sm:col-span-1">
-                    <span className="text-md font-bold text-green-700">12:10 – 12:25</span>
+                    <span className="text-md font-bold text-green-700">11:10 – 11:25</span>
                   </div>
                   <div className="sm:col-span-3">
                     <span className="text-black text-md">Unpacking China's Zero Tariffs Trade Policy – <span className="font-bold text-green-700">Mr. Huang Minghai</span> (Director for Trade, Embassy of the People's Republic of China in Zimbabwe)</span>
@@ -184,7 +184,7 @@ export default function SchedulePage() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4 pt-2 border-t border-green-300">
                   <div className="sm:col-span-1">
-                    <span className="text-md font-bold text-green-700">12:25 – 12:55</span>
+                    <span className="text-md font-bold text-green-700">11:25 – 11:55</span>
                   </div>
                   <div className="sm:col-span-3">
                     <p className="text-black font-bold text-lg">Plenary Session on Zero Tariffs</p>
@@ -212,7 +212,7 @@ export default function SchedulePage() {
               <div className="bg-amber-50 border border-amber-200 rounded-b-lg p-4">
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4">
                   <div className="sm:col-span-1">
-                    <span className="text-md font-bold text-amber-700">12:55 – 13:00</span>
+                    <span className="text-md font-bold text-amber-700">11:55 – 12:00</span>
                   </div>
                   <div className="sm:col-span-3">
                     <span className="text-black font-semibold text-md">Investment and Partnership Agreement Signing Ceremony</span>
@@ -226,7 +226,7 @@ export default function SchedulePage() {
               <div className="bg-white border border-gray-200 p-4 rounded-lg">
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4">
                   <div className="sm:col-span-1">
-                    <span className="text-md font-bold text-black">13:00 – 14:00</span>
+                    <span className="text-md font-bold text-black">12:00 – 13:00</span>
                   </div>
                   <div className="sm:col-span-3">
                     <span className="text-black font-semibold text-md">LUNCH</span>
@@ -243,7 +243,7 @@ export default function SchedulePage() {
               <div className="bg-amber-50 border border-amber-200 rounded-b-lg p-4">
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4">
                   <div className="sm:col-span-1">
-                    <span className="text-md font-bold text-amber-700">14:00 – 14:20</span>
+                    <span className="text-md font-bold text-amber-700">13:00 – 13:20</span>
                   </div>
                   <div className="sm:col-span-3">
                     <span className="text-black text-md">Zimbabwe Government's Mining and Mining Development Strategy as Defined in the National Development Strategy 2 – <span className="font-bold text-amber-700">Hon. Dr. Eng. P. Kambamura</span> (Minister of Mines and Mining Development)</span>
@@ -260,7 +260,7 @@ export default function SchedulePage() {
               <div className="bg-amber-50 border border-amber-200 rounded-b-lg p-4">
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4">
                   <div className="sm:col-span-1">
-                    <span className="text-md font-bold text-amber-700">14:20 – 15:00</span>
+                    <span className="text-md font-bold text-amber-700">13:20 – 14:00</span>
                   </div>
                   <div className="sm:col-span-3">
                     <p className="text-black font-bold text-lg">Unlocking Mining Investment Opportunities in Zimbabwe</p>
@@ -290,7 +290,7 @@ export default function SchedulePage() {
               <div className="bg-teal-50 border border-teal-200 rounded-b-lg p-4">
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4">
                   <div className="sm:col-span-1">
-                    <span className="text-md font-bold text-teal-700">15:00 – 15:20</span>
+                    <span className="text-md font-bold text-teal-700">14:00 – 14:20</span>
                   </div>
                   <div className="sm:col-span-3">
                     <span className="text-black text-md">Re-Defining Zimbabwe's Tourism and Hospitality Strategy – <span className="font-bold text-teal-700">Hon. B. Rwodzi</span> (Minister of Tourism and Hospitality Industry)</span>
@@ -307,7 +307,7 @@ export default function SchedulePage() {
               <div className="bg-teal-50 border border-teal-200 rounded-b-lg p-4">
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4">
                   <div className="sm:col-span-1">
-                    <span className="text-md font-bold text-teal-700">15:20 – 15:45</span>
+                    <span className="text-md font-bold text-teal-700">14:20 – 14:45</span>
                   </div>
                   <div className="sm:col-span-3">
                     <p className="text-black font-bold text-lg">Promoting Tourism and Hospitality Industry in Zimbabwe Leveraging on Provincial Natural Endowments, History, People and Culture</p>
@@ -334,7 +334,7 @@ export default function SchedulePage() {
               <div className="bg-emerald-50 border border-emerald-200 rounded-b-lg p-4">
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4">
                   <div className="sm:col-span-1">
-                    <span className="text-md font-bold text-emerald-700">15:45 – 16:00</span>
+                    <span className="text-md font-bold text-emerald-700">14:45 – 15:00</span>
                   </div>
                   <div className="sm:col-span-3">
                     <span className="text-black text-md">Appreciating Zimbabwe's Land Management and Rural Development Strategy – <span className="font-bold text-emerald-700">Hon. V. Haritatos</span> (Minister of Lands and Rural Development)</span>
@@ -352,7 +352,7 @@ export default function SchedulePage() {
               <div className="bg-emerald-50 border border-emerald-200 rounded-b-lg p-4">
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4">
                   <div className="sm:col-span-1">
-                    <span className="text-md font-bold text-emerald-700">16:00 – 16:30</span>
+                    <span className="text-md font-bold text-emerald-700">15:00 – 15:30</span>
                   </div>
                   <div className="sm:col-span-3">
                     <p className="text-black font-bold text-lg">Enhanced Land Management and Rural Development</p>
@@ -382,7 +382,7 @@ export default function SchedulePage() {
               <div className="bg-purple-50 border border-purple-200 rounded-b-lg p-4">
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4">
                   <div className="sm:col-span-1">
-                    <span className="text-md font-bold text-purple-700">16:30 – 16:45</span>
+                    <span className="text-md font-bold text-purple-700">15:30 – 15:45</span>
                   </div>
                   <div className="sm:col-span-3">
                     <span className="text-black text-md">Unpacking Zimbabwe's Immigration Policy for Investors – <span className="font-bold text-purple-700">Ms. R. Gono</span> (Chief Director, Department of Immigration)</span>
@@ -399,7 +399,7 @@ export default function SchedulePage() {
               <div className="bg-indigo-50 border border-indigo-200 rounded-b-lg p-4 space-y-3">
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4">
                   <div className="sm:col-span-1">
-                    <span className="text-md font-bold text-indigo-700">16:45 – 17:00</span>
+                    <span className="text-md font-bold text-indigo-700">15:45 – 16:00</span>
                   </div>
                   <div className="sm:col-span-3">
                     <p className="text-black font-bold text-lg">Resolutions and Way Forward</p>
@@ -415,7 +415,7 @@ export default function SchedulePage() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4 pt-2 border-t border-indigo-300">
                   <div className="sm:col-span-1">
-                    <span className="text-md font-bold text-indigo-700">17:00 – 17:10</span>
+                    <span className="text-md font-bold text-indigo-700">16:00 – 16:10</span>
                   </div>
                   <div className="sm:col-span-3">
                     <span className="text-black text-md">Closing Remarks and Vote of Thanks – <span className="font-bold text-indigo-700">Mr. W. Wen</span> (Secretary General, The Chamber of Chinese Enterprises in Zimbabwe)</span>
@@ -433,7 +433,7 @@ export default function SchedulePage() {
               <div className="bg-rose-50 border border-rose-200 rounded-b-lg p-4">
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4">
                   <div className="sm:col-span-1">
-                    <span className="text-md font-bold text-rose-700">17:10 – 19:00</span>
+                    <span className="text-md font-bold text-rose-700">16:10 – 18:00</span>
                   </div>
                   <div className="sm:col-span-3">
                     <span className="text-black text-md">Networking Cocktail and Entertainment – <span className="font-semibold">Hosted by Africapaciti and The Chamber of Chinese Enterprises in Zimbabwe</span></span>
@@ -441,7 +441,7 @@ export default function SchedulePage() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4 mt-2 pt-2 border-t border-rose-300">
                   <div className="sm:col-span-1">
-                    <span className="text-md font-bold text-rose-700">19:00</span>
+                    <span className="text-md font-bold text-rose-700">18 :00</span>
                   </div>
                   <div className="sm:col-span-3">
                     <span className="text-black font-semibold text-md">Delegates Departure and End of Programme</span>
