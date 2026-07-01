@@ -24,7 +24,7 @@ export default function RegisterPage() {
   const [errorMessage, setErrorMessage] = useState<string>('');
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const MAX_REGISTRATIONS = 200;
-  const IS_CLOSED = true; // Set to true when registrations are closed
+  const IS_CLOSED = false; // Set to true when registrations are closed
 
   const onSubmit = async (data: FormData) => {
     setSubmitStatus('idle');
@@ -63,11 +63,11 @@ export default function RegisterPage() {
       if (response.ok && result.success) {
         setRegNumber(result.data?.regNumber || 0);
         
-        if (result.data?.regNumber > MAX_REGISTRATIONS) {
-          setSubmitStatus('waiting');
-        } else {
+        // if (result.data?.regNumber > MAX_REGISTRATIONS) {
+        //   setSubmitStatus('waiting');
+        // } else {
           setSubmitStatus('success');
-        }
+        // }
         window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
       }
