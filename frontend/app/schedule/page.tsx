@@ -218,6 +218,7 @@ export default function SchedulePage() {
                   </div>
                   <div className="sm:col-span-3">
                     <span className="text-black font-semibold text-md">Investment and Partnership Agreement Signing Ceremony</span>
+                    <div className="text-black  text-md">China Tobbaco Company / TIAN ZE Tobacco Company</div>
                   </div>
                 </div>
               </div>
