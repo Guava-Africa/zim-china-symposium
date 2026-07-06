@@ -24,7 +24,7 @@ export default function RegisterPage() {
   const [errorMessage, setErrorMessage] = useState<string>('');
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const MAX_REGISTRATIONS = 200;
-  const IS_CLOSED = true; // Set to true when registrations are closed
+  const IS_CLOSED = true ; // Set to true when registrations are closed
 
   const onSubmit = async (data: FormData) => {
     setSubmitStatus('idle');
