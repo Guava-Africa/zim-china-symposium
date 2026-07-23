@@ -433,7 +433,7 @@ export default function PanelistsPage() {
               </Link>
             </div>
             <Link href="/register" className={`hidden md:inline-block bg-red-600 text-white px-3 md:px-5 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-semibold hover:bg-red-700 transition`}>
-              Register for the Symposium →
+              View Symposium Resolutions →
             </Link>
           </div>
         </div>
